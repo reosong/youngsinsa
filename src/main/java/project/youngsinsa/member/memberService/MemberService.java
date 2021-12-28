@@ -1,4 +1,4 @@
-package project.youngsinsa.member;
+package project.youngsinsa.member.memberService;
 
 public interface MemberService {
 

@@ -1,4 +1,4 @@
-package project.youngsinsa.member;
+package project.youngsinsa.member.member;
 
 public class Member {
     private String userID;
@@ -7,6 +7,15 @@ public class Member {
     private String email;
     private String address;
     private String phone;
+
+    public Member(String userID, String userPassword, String userName, String email, String address, String phone) {
+        this.userID = userID;
+        this.userPassword = userPassword;
+        this.userName = userName;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+    }
 
     public String getUserID() {
         return userID;
