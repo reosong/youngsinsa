@@ -1,5 +1,7 @@
 package project.youngsinsa.member.member;
 
+
+
 public class Member {
     private String userID;
     private String userPassword;
@@ -16,6 +18,7 @@ public class Member {
         this.address = address;
         this.phone = phone;
     }
+
 
     public String getUserID() {
         return userID;
