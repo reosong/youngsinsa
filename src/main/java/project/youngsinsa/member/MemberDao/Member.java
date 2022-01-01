@@ -1,4 +1,4 @@
-package project.youngsinsa.member.member;
+package project.youngsinsa.member.MemberDao;
 
 
 
