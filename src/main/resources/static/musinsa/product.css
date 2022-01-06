@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*컬러*/
+.sky{
+    color: rgb(23, 177, 238);
+}
+
+#rest{
+    list-style: none;
+    width: 50px;
+    height: 120px;
+    position: fixed;
+    bottom: 100px;
+    right: 5px;
+    
+
+}
+#rest_li{
+    width: 50px;
+    height: 30px;
+    border: 1px lightgray solid;
+    text-align: center;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+.no_line{
+    text-decoration:none;
+    
+
+}
+
+/*헤더*/
+#header_mu{
+    background-color: black;
+    width: 100%;
+    color: white;
+    height: 50px;
+    
+}
+#header_div{
+   
+    width: 50%;
+    height: 50px;
+    font-size: 40px;
+   
+    display: inline;
+}
+#header_div2{
+    width: 50%;
+display: inline-block;
+float: right;
+
+text-align: right;
+
+}
+#header_div2 >ul{
+    list-style: none;
+    display: inline-block;
+    padding: 15px 0px 15px 0px;
+    text-align: right;
+}
+#header_div2 li{
+    display: inline;
+    font-size: 15px;
+    padding-right: 10px;
+   
+    
+}
+#header_2{
+    width: 100%;
+    background-color: rgb(207, 204, 204);
+    height: 40px;
+}
+#header_2 > ul{
+    margin-top: 10px;
+    margin-left: 20px;
+    display: inline-block;
+   
+}
+#header_2 li{
+    display: inline;
+    color: rgb(107, 106, 106);
+    margin-left: 10px;
+
+}
+#header_3{
+    border-bottom:solid 1px lightgray;
+    height: 30px;
+    width: 100%;
+
+}
+#header_3 > ul{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#header_3 li{
+    display: inline;
+    margin-left: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*목차*/
+
+.clear{
+    clear: both;
+}
+.aside_small{
+    font-size: 15px;
+    color: lightgray;
+}
+.aside_li{
+    height: 40px;
+    border-bottom:solid 1px lightgray;
+    font-size: 20px;
+   padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: "돋움";
+    
+}
+#aside_a{
+    width: 20%;
+    border-right: solid 1px lightgray;
+    display: inline-block;
+    float: left;
+}
+#aside_section_2{
+
+
+}
+#aside_section_2 >ul{
+list-style: none;
+border-bottom: 1px solid lightgray;
+
+}
+#aside_section_2 li{
+margin-left: 10px;
+margin-top: 10px;
+}
+
+/*메인*/
+
+main{
+    width: 79%;
+    display: inline-block;
+    float: right;
+   
+}
+#company{
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+    width: 100%;
+    height: 50px;
+    font-size: 40px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+#photo{
+    margin-top: 5px;
+ width: 50%;
+ float: left;
+
+}
+#info{
+   
+    width: 43%;
+    height: 600px;
+    float: right;
+}
+#info_1{
+    width: 100%;
+    height: 250px;
+    
+}
+
+#info_left{
+    margin-top: 20px;
+    margin-left: 20px;
+    list-style: none;
+    width: 35%;
+  
+    float: left;
+}
+#info_left >li{
+    margin-top: 10px;
+}
+#info_right{
+    margin-top: 20px;
+    margin-left: 10px;
+    list-style: none;
+    width: 45%;
+    
+    float: left;
+}
+#info_right >li{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+#info_2{
+    width: 100%;
+    height: 150px;
+   
+}
+
+#info_3{width: 100%;
+    height: 200px;
+    
+
+}
+#info2_left{
+    margin-top: 20px;
+    margin-left: 20px;
+    list-style: none;
+    width: 35%;
+  
+    float: left;
+}
+#info2_left >li{
+    margin-top: 20px;
+}

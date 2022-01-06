@@ -1,0 +1,86 @@
+body{
+    text-align: center;
+    background-color: lightgray;
+}
+#div_login{
+margin-left: 30%;
+width: 500px;
+
+height: 1000px;
+background-color: white;
+}
+#div_login2{
+padding-top: 50px;
+font-size: 30px;
+
+}
+#div_member{
+height: 40px;
+margin-top: 30px;
+font-size: 20px;
+border-bottom: 1px solid lightgray;
+}
+#div_id{
+width: 500px;
+height: 60px;
+
+text-align: center;
+margin-top: 20px;
+}
+#div_password{
+width: 500px;
+height: 60px;
+
+text-align: center;
+margin-top: 20px;
+}
+#input_id{
+width: 400px;
+height: 50px;
+text-align: center;
+
+}
+#input_password{
+width: 400px;
+height: 50px;
+text-align: center;
+
+}
+#div_login_button{
+width: 500px;
+height: 60px;
+
+text-align: center;
+margin-top: 20px;
+
+}
+#button_login{
+background-color: black;
+color: white;
+width: 400px;
+height: 50px;
+font-size: 20px;
+font-weight: bold;
+border-radius: 10px;
+margin-top: 5px;
+}
+#kakao{
+width: 500px;
+height: 60px;
+
+text-align: center;
+margin-top: 20px;
+
+}
+#kakao_login{
+background-color: rgb(238, 219, 14);
+color: black;
+width: 400px;
+height: 50px;
+font-size: 20px;
+font-weight: bold;
+border-radius: 10px;
+margin-top: 5px;
+border: none;
+
+}

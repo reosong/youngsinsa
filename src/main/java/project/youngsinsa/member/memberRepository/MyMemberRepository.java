@@ -1,28 +1,17 @@
 package project.youngsinsa.member.memberRepository;
 
-import org.springframework.context.annotation.Bean;
+
+import org.springframework.stereotype.Repository;
+import project.youngsinsa.member.MemberDto.Member;
+
+@Repository
+public class MyMemberRepository implements MemberRepository {
 
 
-
-public class MyMemberRepository implements MemberReopository{
-
-    public MyMemberRepository() {
-        try {
-            String url = "jdbc:mysql://localhost:3306/tesla";
-            String id = "root";
-            String password = "1234";
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
-    public void save() {
+    public void save(Member member) {
         String sql = "insert into ";
-        try{
-
-        }catch ()
 
     }
 

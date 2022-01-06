@@ -1,0 +1,16 @@
+/* 그냥 css에 토글 css 적용 */
+.navbar__toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  font-size: 24px;
+  display: none;
+}
+
+/* 미디어 쿼리의 토글 적용 */
+.navbar__toggle-btn {
+  display: block;
+  top: 16px;
+  right: 16px;
+  font-size: var(--font-medium);
+}
