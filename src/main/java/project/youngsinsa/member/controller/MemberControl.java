@@ -34,9 +34,15 @@ public class MemberControl {
 
 
     @PostMapping("/login")
-    public String loginTry(@RequestParam String userID,
-                           @RequestParam String userPassword) {
-        return "/index";
+    public String loginTry(Member member) {
+        Member member1 = new Member();
+
+
+        System.out.println(member.getUserID());
+        System.out.println(member.getUserPassword());
+        memberService.login(member);
+
+        return "redirect:/";
     }
 
 
@@ -49,7 +55,8 @@ public class MemberControl {
     @PostMapping("/member")
     public String JoinMember(Member member) {
         System.out.println(member.getUserID());
+        System.out.println(member.getUserPassword());
        memberService.join(member);
-        return "hhhh/login";
+        return "redirect:/";
     }
 }

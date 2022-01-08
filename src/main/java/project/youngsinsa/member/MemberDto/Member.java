@@ -4,6 +4,7 @@ package project.youngsinsa.member.MemberDto;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -11,9 +12,15 @@ import javax.persistence.Id;
 @Entity
 public class Member {
     @Id
+    @Column(name = "userID")
     private String userID;
+
+    @Column(name= "userPassword")
     private String userPassword;
+
+    @Column(name= "userName")
     private String userName;
+
     private String email;
     private String address;
     private String phone;

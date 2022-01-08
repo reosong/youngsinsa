@@ -2,13 +2,14 @@ package project.youngsinsa.member.MemberDao;
 
 import project.youngsinsa.member.MemberDto.Member;
 
-import java.util.HashMap;
 import java.util.List;
 
 public interface MemberDao {
 
 
-     public String findID();
+     public String findID(String userID);
+
+     List<Member> loginOK(Member member);
 
      public int memberInsert(Member member) ;
 

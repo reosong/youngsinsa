@@ -1,13 +1,12 @@
 package project.youngsinsa.member.memberRepository;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import project.youngsinsa.member.MemberDto.Member;
-import project.youngsinsa.member.MemberMapper;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class MyMemberRepository implements MemberRepository {
@@ -22,17 +21,26 @@ public class MyMemberRepository implements MemberRepository {
 
     @Override
     @Transactional
-    public Member save(Member member) {
+    public void save(Member member) {
         em.persist(member);
 
-
-        return member;
     }
 
     @Override
     public void findUser() {
 
     }
+
+    @Override
+    public List<Member> login(Member member) {
+        return em.createQuery("select m.userID, m.userPassword from Member m where m.name = :name", Member.class)
+                .setParameter("name", member.getUserID())
+                .getResultList();
+
+    }
+
+
+
 //    @Autowired
 //    MemberMapper memberMapper;
 

@@ -1,15 +1,36 @@
 package project.youngsinsa.member.MemberDao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import project.youngsinsa.member.MemberDto.Member;
+import project.youngsinsa.member.memberRepository.MemberRepository;
+import project.youngsinsa.member.memberRepository.MyMemberRepository;
 
 import java.util.List;
 
+@Component
 public class MemberDaoImp implements MemberDao{
 
 
+    private MemberRepository memberRepository;
+
+    @Autowired
+    public MemberDaoImp(MyMemberRepository MymemberRepository) {
+        this.memberRepository = MymemberRepository;
+    }
+
+
+
+
     @Override
-    public String findID() {
+    public String findID(String userID) {
         return null;
+    }
+
+    @Override
+    public List<Member> loginOK(Member member) {
+         return memberRepository.login(member);
+
     }
 
     @Override

@@ -4,10 +4,11 @@ import project.youngsinsa.member.MemberDto.Member;
 
 public interface MemberService {
 
-    public Member join(Member member);
+    public String join(Member member);
 
     void findId();
 
+    public String login(Member member);
 
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,14 +100,15 @@
 
 
 <body>
+<form action="" th:action method="post">
 <div id="div_login">
     <div id="div_login2"> <b>로그인</b> </div>
     <div id="div_member"> 기존 회원 </div>
     <div id="div_id">
-        <input type="text" id="input_id" placeholder="아이디를 입력하세요 ">
+        <input type="text" id="input_id" name="userID" placeholder="아이디를 입력하세요 ">
     </div>
     <div id="div_password">
-        <input type="password" id="input_password" placeholder="비밀번호를 입력하세요 ">
+        <input type="password" id="input_password" name="userPassword" placeholder="비밀번호를 입력하세요 ">
     </div>
     <div id="div_login_button">
         <input type="submit" value="로 그 인"
@@ -122,7 +123,7 @@
     </div>
 
 
-
+    </form>
 
 
 
