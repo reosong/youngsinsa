@@ -1,9 +1,9 @@
-package project.youngsinsa.member.memberRepository;
+package project.youngsinsa.member.Repository;
 
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import project.youngsinsa.member.MemberDto.Member;
+import project.youngsinsa.member.Dto.Member;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -33,7 +33,7 @@ public class MyMemberRepository implements MemberRepository {
 
     @Override
     public List<Member> login(Member member) {
-        return em.createQuery("select m.userID, m.userPassword from Member m where m.name = :name", Member.class)
+        return  em.createQuery("select m from Member m where m.userID = :name", Member.class)
                 .setParameter("name", member.getUserID())
                 .getResultList();
 

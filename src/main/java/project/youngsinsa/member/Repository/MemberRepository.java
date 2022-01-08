@@ -1,6 +1,6 @@
-package project.youngsinsa.member.memberRepository;
+package project.youngsinsa.member.Repository;
 
-import project.youngsinsa.member.MemberDto.Member;
+import project.youngsinsa.member.Dto.Member;
 
 import java.util.List;
 

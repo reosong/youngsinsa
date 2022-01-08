@@ -1,10 +1,10 @@
-package project.youngsinsa.member.MemberDao;
+package project.youngsinsa.member.Dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import project.youngsinsa.member.MemberDto.Member;
-import project.youngsinsa.member.memberRepository.MemberRepository;
-import project.youngsinsa.member.memberRepository.MyMemberRepository;
+import project.youngsinsa.member.Dto.Member;
+import project.youngsinsa.member.Repository.MemberRepository;
+import project.youngsinsa.member.Repository.MyMemberRepository;
 
 import java.util.List;
 

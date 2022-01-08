@@ -2,7 +2,7 @@ package project.youngsinsa.member;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
-import project.youngsinsa.member.MemberDto.Member;
+import project.youngsinsa.member.Dto.Member;
 
 public interface MemberMapper {
     @Mapper

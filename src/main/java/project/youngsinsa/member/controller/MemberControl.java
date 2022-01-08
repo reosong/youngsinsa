@@ -4,14 +4,13 @@ package project.youngsinsa.member.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import project.youngsinsa.member.MemberDto.Member;
-import project.youngsinsa.member.memberService.MemberService;
-import project.youngsinsa.member.memberService.MemberServiceImp;
+import project.youngsinsa.member.Dto.Member;
+import project.youngsinsa.member.Service.MemberService;
+import project.youngsinsa.member.Service.MemberServiceImp;
 
 @Controller
 @RequestMapping("/hhhh/login")
@@ -33,15 +32,16 @@ public class MemberControl {
     }
 
 
-    @PostMapping("/login")
+    //로그인
+    @PostMapping
     public String loginTry(Member member) {
-        Member member1 = new Member();
 
 
-        System.out.println(member.getUserID());
-        System.out.println(member.getUserPassword());
-        memberService.login(member);
+        String result =memberService.login(member);
 
+        if (result == null) {
+            return "hhhh/error";
+        }
         return "redirect:/";
     }
 
@@ -51,12 +51,20 @@ public class MemberControl {
         return "hhhh/member";
     }
 
-
+    //  회원가입
     @PostMapping("/member")
-    public String JoinMember(Member member) {
-        System.out.println(member.getUserID());
+    public String JoinMember(Member member, @RequestParam String userPasswordOK) {
+
+        System.out.println(userPasswordOK);
         System.out.println(member.getUserPassword());
-       memberService.join(member);
+        if (member.getUserPassword().equals(userPasswordOK)) {
+            memberService.join(member);
+        } else {
+            return "hhhh/error";
+        }
         return "redirect:/";
     }
+
+    @GetMapping("/home")
+    public String back(){return "redirect:/";}
 }

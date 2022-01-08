@@ -1,13 +1,13 @@
-package project.youngsinsa.member.memberService;
+package project.youngsinsa.member.Service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import project.youngsinsa.member.MemberDao.MemberDao;
-import project.youngsinsa.member.MemberDao.MemberDaoImp;
-import project.youngsinsa.member.MemberDto.Member;
-import project.youngsinsa.member.memberRepository.MemberRepository;
-import project.youngsinsa.member.memberRepository.MyMemberRepository;
+import project.youngsinsa.member.Dao.MemberDao;
+import project.youngsinsa.member.Dao.MemberDaoImp;
+import project.youngsinsa.member.Dto.Member;
+import project.youngsinsa.member.Repository.MemberRepository;
+import project.youngsinsa.member.Repository.MyMemberRepository;
 
 import java.util.List;
 
@@ -41,11 +41,15 @@ public class MemberServiceImp implements MemberService{
 
         String userID = member.getUserID();
         String userPassword = member.getUserPassword();
-        List<Member> loginMember =  memberDao.loginOK(member);
-        Member id = loginMember.get(1);
-        Member password = loginMember.get(2);
-
-        return userID;
+        List<Member> result =  memberDao.loginOK(member);
+        Member m = result.get(0);
+        String id = m.getUserID();
+        String password = m.getUserPassword();
+        if(id.equals(userID)||password.equals(userPassword)) {
+            return userID;
+        }else{
+            return null;
+        }
     }
 
 

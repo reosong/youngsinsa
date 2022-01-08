@@ -1,6 +1,6 @@
-package project.youngsinsa.member.memberService;
+package project.youngsinsa.member.Service;
 
-import project.youngsinsa.member.MemberDto.Member;
+import project.youngsinsa.member.Dto.Member;
 
 public interface MemberService {
 

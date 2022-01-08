@@ -1,6 +1,6 @@
-package project.youngsinsa.member.MemberDao;
+package project.youngsinsa.member.Dao;
 
-import project.youngsinsa.member.MemberDto.Member;
+import project.youngsinsa.member.Dto.Member;
 
 import java.util.List;
 

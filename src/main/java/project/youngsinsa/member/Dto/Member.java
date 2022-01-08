@@ -1,4 +1,4 @@
-package project.youngsinsa.member.MemberDto;
+package project.youngsinsa.member.Dto;
 
 
 import lombok.Getter;
