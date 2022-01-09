@@ -17,6 +17,9 @@ public interface MemberDao {
 
      public Member memberUpdate(String id) ;
 
+     //정보 업데이트
+     Member memberUpdate(Member member);
+
      public int memberUpdateOk(Member member);
 
      public int memberDelete(String id, String password);

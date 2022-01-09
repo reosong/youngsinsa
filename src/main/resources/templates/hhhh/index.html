@@ -24,7 +24,7 @@ a:hover{text-decoration: none;color: black;}
     <script src="./toto.js"></script>
 
     <link rel="stylesheet" href="musinsa/musinsa.css">
-    <link rel="stylesheet" media="screen and (min-width: 600px)" href="./hhhh/mmusinsa.html"/>
+
 
 
 </head>
@@ -58,7 +58,7 @@ a:hover{text-decoration: none;color: black;}
 
 <div>
     <ul id="rest">
-        <a href="/hhhh/login"><li id="rest_li" th:text="${session.userID}" style="padding:15px 0 0 0;"> 로그인</li></a>
+        <a href="/hhhh/login"><li id="rest_li"  style="padding:15px 0 0 0;"> 로그인</li></a>
         <a href="/hhhh/menu5.html"><li id="rest_li" style="height: 40px;">장바 <br>구니</li></a>
         <a href="#header_2"><li id="rest_li" style="padding:15px 0 0 0;"> TOP </li></a>
     </ul>
@@ -79,7 +79,9 @@ a:hover{text-decoration: none;color: black;}
 <header id="header_3">
     <ul>
         <li>
-            <a href="/hhhh/login" class="no_line" style="color: black;" th:text="${userID}">
+            <a href="/hhhh/login" class="no_line" style="color: black;" th:if="${session.userID==null}" th:text="'로그인'">
+                로그인</a>
+            <a href="/hhhh/login" class="no_line" style="color: black;" th:unless="${session.userID==null}" th:text="${session.userID}">
                 로그인</a>
         </li>
         <li class="sky" >바로접속 On</li>
@@ -90,7 +92,7 @@ a:hover{text-decoration: none;color: black;}
         <li><a href="./hhhh/menu5.html">장바구니</a></li>
         <li><a href="./hhhh/menu6.html"> 주문배송조회</a></li>
         <li><a href="./hhhh/menu7.html"> 고객센터 </a></li>
-        <li><a href="./hhhh/menu8.html">로그아웃</a></li>
+        <li><a href="./login/logout">로그아웃</a></li>
         <li class="sky"><a href="./hhhh/menu9.html"> 친구초대 EVENT</a></li>
     </ul>
 </header>

@@ -40,7 +40,12 @@ public class MyMemberRepository implements MemberRepository {
     }
 
 
+    @Override
+    public Member memberUpdate(Member member) {
+        em.persist(member);
 
+        return member;
+    }
 //    @Autowired
 //    MemberMapper memberMapper;
 

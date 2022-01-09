@@ -24,9 +24,12 @@ public class MemberDaoImp implements MemberDao{
 
     @Override
     public String findID(String userID) {
+
+
         return null;
     }
 
+    //로그인
     @Override
     public List<Member> loginOK(Member member) {
          return memberRepository.login(member);
@@ -45,6 +48,13 @@ public class MemberDaoImp implements MemberDao{
 
     @Override
     public Member memberUpdate(String id) {
+        return null;
+    }
+
+    //정보 업데이트
+    @Override
+    public Member memberUpdate(Member member) {
+        memberRepository.memberUpdate(member);
         return null;
     }
 

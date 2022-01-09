@@ -14,4 +14,6 @@ public interface MemberRepository {
 
 
     List<Member> login(Member member);
+
+    Member memberUpdate(Member member);
 }
