@@ -36,6 +36,7 @@ public class MemberServiceImp implements MemberService{
 
     }
 
+    //로그인
     @Override
     public String login(Member member ) {
 
@@ -52,6 +53,13 @@ public class MemberServiceImp implements MemberService{
         }
     }
 
+    //회원정보 업데이트
+    @Override
+    public String memberUpdate(Member member) {
+        memberDao.memberUpdate(member);
+
+        return member.getUserID();
+    }
 
 
 }

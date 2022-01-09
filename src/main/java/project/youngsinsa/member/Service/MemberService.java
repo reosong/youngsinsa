@@ -11,4 +11,6 @@ public interface MemberService {
     public String login(Member member);
 
 
+    //회원정보 업데이트
+    String memberUpdate(Member member);
 }

@@ -33,7 +33,7 @@ public class MemberControl {
         this.sessionManager = sessionManager;
     }
 
-
+    //로그인 화면이동
     @GetMapping("/login")
     public String login() {
         return "hhhh/login";
@@ -52,17 +52,17 @@ public class MemberControl {
         session.setAttribute("userID", member.getUserID());
 //        ModelAndView mv = new ModelAndView("hhhh/index");
         System.out.println(session.getAttribute("userID"));
-        
-        return "hhhh/index";
+
+        return "hhhh/main";
     }
 
-
+    //회원가입 화면이동
     @GetMapping("/login/member")
     public String joinFrom() {
         return "hhhh/member";
     }
 
-    //  회원가입
+    //회원가입
     @PostMapping("/login/member")
     public String JoinMember(Member member, @RequestParam String userPasswordOK) {
 
@@ -76,15 +76,31 @@ public class MemberControl {
         return "redirect:/";
     }
 
+
     @GetMapping("/login/home")
     public String back() {
         return "redirect:/";
     }
 
+    //로그아웃
     @GetMapping("/login/logout")
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.invalidate();
-        return "hhhh/index";
+        return "hhhh/main";
     }
+
+    //마이페이지 이동
+    @GetMapping("/login/myPage")
+    public String myPage(){
+        return "hhhh/myPage";
+    }
+    //정보 업데이트
+    @PostMapping("/login/myPage")
+    public ModelAndView memberUpdate(Member member) {
+       // MemberServiceImp.memberUpdate(member);
+        ModelAndView mv = new ModelAndView("hhhh/main");
+        return mv;
+    }
+
 }

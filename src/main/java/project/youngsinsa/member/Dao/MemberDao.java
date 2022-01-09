@@ -15,7 +15,7 @@ public interface MemberDao {
 
      public int memberIdCheck(String id);
 
-     public Member memberUpdate(String id) ;
+
 
      //정보 업데이트
      Member memberUpdate(Member member);

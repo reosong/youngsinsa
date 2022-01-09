@@ -46,16 +46,14 @@ public class MemberDaoImp implements MemberDao{
         return 0;
     }
 
-    @Override
-    public Member memberUpdate(String id) {
-        return null;
-    }
+
 
     //정보 업데이트
     @Override
     public Member memberUpdate(Member member) {
         memberRepository.memberUpdate(member);
-        return null;
+
+        return member;
     }
 
     @Override

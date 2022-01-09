@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원 정보 수정</title>
+  <style>
+        body{
+            text-align: center;
+            background-color: lightgray;
+        }
+    #div_login{
+        margin-left: 30%;
+        width: 500px;
+
+        height: 1000px;
+        background-color: white;
+    }
+    #div_login2{
+        padding-top: 30px;
+        padding-bottom: 20px;
+        font-size: 30px;
+         border-bottom: 1px solid lightgray;
+    }
+    #div_member{
+        height: 40px;
+        margin-top: 30px;
+        font-size: 20px;
+        border-bottom: 1px solid lightgray;
+    }
+    #div_id{
+        width: 500px;
+        height: 60px;
+
+        text-align: center;
+        margin-top: 20px;
+    }
+    #div_password{
+        width: 500px;
+        height: 90px;
+
+        text-align: center;
+        margin-top: 20px;
+    }
+    #input_id{
+        width: 400px;
+        height: 50px;
+        text-align: center;
+
+    }
+    #input_password{
+        width: 400px;
+        height: 50px;
+        text-align: center;
+        margin-top: 10px;
+
+    }
+    .ul_left{
+    list-style: none;
+    text-align: left;
+    }
+
+    .li_margin{
+        margin-top: 10px;
+    }
+    .input_email{
+        width: 400px;
+        height: 50px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+
+    #input_submit{
+        width: 400px;
+        height: 50px;
+        text-align: center;
+        margin-top: 10px;
+
+    }
+        a:link{text-decoration: none;color: black;}
+        a:visited{text-decoration: none;color: black;}
+        a:active{text-decoration: none;color: black;}
+        a:hover{text-decoration: none;color: black;}
+
+    </style>
+
+</head>
+
+
+<body>
+<form action="" th:action method="post">
+  <div id="div_login">
+    <a href="../index.html"><div id="div_login2"> <b>MUSINSA</b> </div></a>
+
+
+    <div id="div_id">
+      <ul class="ul_left">
+        <li >아이디</li>
+        <li class="li_margin"><input type="text" name="userID" id="input_id" value=" "th:value="${session.userID}"></li>
+      </ul>
+    </div>
+    <br>
+    <div id="div_password">
+      <ul class="ul_left">
+        <li> 이름</li>
+        <li class="li_margin"><input type="text" name="userName" id="input_password" ></li>
+
+      </ul>
+    </div>
+    <div>
+      <ul class="ul_left">
+        <li>주소</li>
+        <li><input type="text" name="address" placeholder="주소(특수문자 제외)" class="input_email"></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="ul_left">
+        <li>핸드폰</li>
+        <li><input type="text" name="Phone" placeholder="핸드폰" class="input_email"></li>
+      </ul>
+    </div>
+
+
+    <div>
+      <input type="submit" id="input_submit" value="확인">
+    </div>
+
+
+
+
+
+  </div>
+</form>
+
+</body>
+</html>
