@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import project.youngsinsa.member.Dao.MemberDao;
 import project.youngsinsa.member.Dao.MemberDaoImp;
-import project.youngsinsa.member.Dto.Member;
+import project.youngsinsa.member.domain.Member;
 import project.youngsinsa.member.Repository.MemberRepository;
 import project.youngsinsa.member.Repository.MyMemberRepository;
 

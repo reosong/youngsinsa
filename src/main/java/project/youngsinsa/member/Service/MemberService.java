@@ -1,6 +1,6 @@
 package project.youngsinsa.member.Service;
 
-import project.youngsinsa.member.Dto.Member;
+import project.youngsinsa.member.domain.Member;
 
 public interface MemberService {
 

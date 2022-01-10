@@ -1,6 +1,6 @@
 package project.youngsinsa.member.Repository;
 
-import project.youngsinsa.member.Dto.Member;
+import project.youngsinsa.member.domain.Member;
 
 import java.util.List;
 

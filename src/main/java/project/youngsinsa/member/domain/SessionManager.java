@@ -1,4 +1,4 @@
-package project.youngsinsa.member.Dto;
+package project.youngsinsa.member.domain;
 
 import org.springframework.stereotype.Component;
 

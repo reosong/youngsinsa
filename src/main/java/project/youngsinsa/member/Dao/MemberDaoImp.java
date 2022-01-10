@@ -2,7 +2,7 @@ package project.youngsinsa.member.Dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import project.youngsinsa.member.Dto.Member;
+import project.youngsinsa.member.domain.Member;
 import project.youngsinsa.member.Repository.MemberRepository;
 import project.youngsinsa.member.Repository.MyMemberRepository;
 
