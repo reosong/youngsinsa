@@ -3,7 +3,11 @@ package project.youngsinsa.category.service;
 
 import org.springframework.stereotype.Service;
 import project.youngsinsa.category.Dao.CategoryDao;
+import project.youngsinsa.category.domain.Category;
+import project.youngsinsa.category.domain.CategoryTop;
 import project.youngsinsa.category.repository.CategoryRepository;
+
+import java.util.List;
 
 @Service
 public class CategoryServiceImp implements CategoryService{
@@ -15,4 +19,20 @@ public class CategoryServiceImp implements CategoryService{
         this.categoryRepository = categoryRepository;
         this.categoryDao = categoryDao;
     }
+
+    @Override
+    public List<Category> showTopList(Category category) {
+        return null;
+    }
+
+    @Override
+    public List<Category> showTopList(){
+        CategoryTop ct = new CategoryTop();
+
+        return categoryDao.showList(ct);
+
+    }
+
+
+
 }

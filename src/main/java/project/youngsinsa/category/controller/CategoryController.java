@@ -5,7 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 import project.youngsinsa.category.Dao.CategoryDao;
+import project.youngsinsa.category.domain.Category;
+import project.youngsinsa.category.domain.CategoryTop;
 import project.youngsinsa.category.service.CategoryService;
+import project.youngsinsa.category.service.CategoryServiceImp;
+
+import java.util.List;
 
 @Controller
 public class CategoryController {
@@ -13,16 +18,19 @@ public class CategoryController {
     private CategoryDao categoryDao;
     private CategoryService categoryService;
 
-    public CategoryController(CategoryDao categoryDao, CategoryService categoryService) {
+    public CategoryController(CategoryDao categoryDao, CategoryServiceImp categoryServiceImp
+    ) {
         this.categoryDao = categoryDao;
-        this.categoryService = categoryService;
+        this.categoryService = categoryServiceImp;
     }
 
-    @GetMapping("/category/top")
+    @GetMapping("/hhhh/top")
     public ModelAndView showTop(Model model){
-        model.addAttribute(categoryService.showTopList());
-        ModelAndView mv = new ModelAndView("hhhh/top");
 
+        List<Category> list = categoryService.showTopList();
+
+        ModelAndView mv = new ModelAndView("hhhh/top");
+        mv.addObject("list",list);
         return mv;
 
     }

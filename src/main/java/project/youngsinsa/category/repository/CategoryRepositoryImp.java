@@ -20,7 +20,8 @@ public class CategoryRepositoryImp implements CategoryRepository {
 
 
     public List<Category> showList(Category category) {
-        return em.createQuery("select c from Category c order by like desc limit 0,10")
+        return em.createQuery("select c from CategoryTop c order by likeNum desc ")
+
                 .getResultList();
 
     }

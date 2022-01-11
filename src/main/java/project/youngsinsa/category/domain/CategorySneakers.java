@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @Getter
@@ -11,6 +12,7 @@ import javax.persistence.Entity;
 public class CategorySneakers {
     //
     private String form;
+    @Id
     private int modelNum;
     private String modelName;
     private String modelBrand;
@@ -18,7 +20,7 @@ public class CategorySneakers {
     private String season;
     private String sex;
     private int countNum;
-    private int like;
+    private int likeNum;
     private String photo1;
     private String photo2;
     private String photo3;
@@ -29,7 +31,7 @@ public class CategorySneakers {
     public CategorySneakers() {
     }
 
-    public CategorySneakers(String form, int modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int like) {
+    public CategorySneakers(String form, int modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int likeNum) {
         this.form = form;
         this.modelNum = modelNum;
         this.modelName = modelName;
@@ -38,6 +40,6 @@ public class CategorySneakers {
         this.season = season;
         this.sex = sex;
         this.countNum = countNum;
-        this.like = like;
+        this.likeNum = likeNum;
     }
 }

@@ -20,4 +20,14 @@ public class CategoryDaoImp implements CategoryDao{
 
         return categoryRepository.showList(category);
     }
+
+    @Override
+    public Category showOne(Category category) {
+        return null;
+    }
+
+    @Override
+    public void like(Category category) {
+
+    }
 }

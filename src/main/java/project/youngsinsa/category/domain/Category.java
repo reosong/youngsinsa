@@ -3,8 +3,8 @@ package project.youngsinsa.category.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-@Entity
+
+
 @Getter
 @Setter
 public class Category {
@@ -19,9 +19,13 @@ public class Category {
         private String season;
         private String sex;
         private int countNum;
-        private int like;
+        private int likeNum;
+        //메인에 나오는 작은사진
         private String photo1;
+        //상세페이지 큰 사진
         private String photo2;
+
+        //상세페이지 세부 사진
         private String photo3;
         private String photo4;
         private String photo5;
