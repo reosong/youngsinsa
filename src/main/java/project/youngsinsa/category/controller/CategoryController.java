@@ -24,12 +24,12 @@ public class CategoryController {
         this.categoryService = categoryServiceImp;
     }
 
-    @GetMapping("/hhhh/top")
+    @GetMapping("/hhhh/category")
     public ModelAndView showTop(Model model){
 
         List<Category> list = categoryService.showTopList();
 
-        ModelAndView mv = new ModelAndView("hhhh/top");
+        ModelAndView mv = new ModelAndView("hhhh/category");
         mv.addObject("list",list);
         return mv;
 
