@@ -11,4 +11,6 @@ public interface CategoryRepository {
 
 
     public List<Category> showList(Category category);
+
+    Category showOne(int modelNum);
 }

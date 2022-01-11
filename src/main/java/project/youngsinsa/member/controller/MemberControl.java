@@ -34,7 +34,12 @@ public class MemberControl {
 
     //로그인 화면이동
     @GetMapping("/login")
-    public String login() {
+    public String login(HttpServletRequest request) {
+//        if (request.getSession()==null) {
+//            return "hhhh/login";
+//        } else if (request.getSession() != null) {
+//            return "redirect:/";
+//        }
         return "hhhh/login";
     }
 

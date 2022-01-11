@@ -25,6 +25,7 @@ public class CategoryServiceImp implements CategoryService{
         return null;
     }
 
+    //top 상품리스트 불러오기
     @Override
     public List<Category> showTopList(){
         CategoryTop ct = new CategoryTop();
