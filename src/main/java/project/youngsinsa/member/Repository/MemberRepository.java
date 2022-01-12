@@ -13,7 +13,10 @@ public interface MemberRepository {
     void findUser();
 
 
-    List<Member> login(Member member);
+
+
+    //로그인
+    List<Member> loginOK(Member member);
 
     Member memberUpdate(Member member);
 }

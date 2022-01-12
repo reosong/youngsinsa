@@ -32,7 +32,7 @@ public class MemberDaoImp implements MemberDao{
     //로그인
     @Override
     public List<Member> loginOK(Member member) {
-         return memberRepository.login(member);
+         return memberRepository.loginOK(member);
 
     }
 

@@ -5,8 +5,10 @@ import org.springframework.stereotype.Service;
 import project.youngsinsa.category.Dao.CategoryDao;
 import project.youngsinsa.category.domain.Category;
 import project.youngsinsa.category.domain.CategoryTop;
+import project.youngsinsa.category.domain.Comment;
 import project.youngsinsa.category.repository.CategoryRepository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -19,7 +21,7 @@ public class CategoryServiceImp implements CategoryService{
         this.categoryRepository = categoryRepository;
         this.categoryDao = categoryDao;
     }
-
+    int count =0;
     @Override
     public List<Category> showTopList(Category category) {
         return null;
@@ -30,10 +32,27 @@ public class CategoryServiceImp implements CategoryService{
     public List<Category> showTopList(){
         CategoryTop ct = new CategoryTop();
 
-        return categoryDao.showList(ct);
+        return categoryRepository.showList(ct);
 
+    }
+    //상세페이지보기
+    @Override
+    public Category showOne(int modelNum) {
+        return categoryRepository.showOne(modelNum);
     }
 
 
-
+    //댓글쓰기
+    @Override
+    public Comment writeComment(Comment comment) {
+//        String date = categoryRepository.getDate();
+//        comment.setDate(date);
+        count = categoryRepository.LastCommentNum()+1;
+        comment.setNum(count);
+        String a= String.valueOf(LocalDateTime.now());
+        String date = a.substring(0, 10) +" "+a.substring(11, 19);
+        comment.setDate(date);
+        categoryRepository.writeComment(comment);
+        return comment;
+    }
 }

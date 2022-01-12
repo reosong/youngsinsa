@@ -12,7 +12,7 @@
         a:hover{text-decoration: none;color: black;}
 
         </style>
-    <link rel="stylesheet" href="./musinsa/product.css?ver1">
+    <link rel="stylesheet" href="../musinsa/product.css?ver2">
 
 </head>
 <body>
@@ -222,9 +222,9 @@
 
             </ul>
             <ul id="info_right">
-                <li style="color: gray; font-size: 30px;" th:text="${product.price}" >490,000원</li>
-                <li style="font-size: 20px;"th:text="${product.price}">259,000원</li>
-                <li style="margin-top: 20px;" th:text="${product.price}">2590원</li>
+                <li style="color: gray; font-size: 30px;" th:text="|${product.price}원|" >490,000원</li>
+                <li style="font-size: 20px;"th:text="|${#numbers.formatDecimal(product.price*0.9,0,0)}원|">259,000원</li>
+                <li style="margin-top: 20px;" th:text="|${#numbers.formatDecimal(product.price*0.1,0,0)}원|">2590원</li>
 
             </ul>
             <div class="clear"></div>
@@ -233,7 +233,7 @@
 
 
 
-        <!--배송정보-->
+        <!--구매하기 -->
         <section id="info_2">
 
             <div id="location" >
@@ -280,12 +280,49 @@
 
 
 </div>
-<!--<div class="big_box">-->
-<!--    <img src="../images/bluejean.jpeg" alt="">-->
+
+<!-- 댓글 -->
+<div class="page" style="font-size:40px;">
+    상품 후기
+</div>
+<div class="re_box">
+
+    <ul style="width: 100%; list-style: none;">
+        <li style="width: 100%; list-style: none;">
+            <ul class="re_title" style=" background-color: bisque;">
+                <li class="re_id" style="font-size: 20px; font-weight: bold;">아이디</li>
+                <li class="re_content" style="font-size: 20px; font-weight: bold;">내용</li>
+                <li class="re_time" style="font-size: 20px; font-weight: bold;">작성 시간</li>
+            </ul>
+        </li>
+        <div>
+<!--        <div th:each="">-->
+            <li style="width: 100%; list-style: none;">
+                <ul class="re_title">
+                    <li class="re_id" >송영서</li>
+                    <li class="re_content">가나다라마바사</li>
+                    <li class="re_time">2022-01-12</li>
+                </ul>
+            </li>
 
 
-<!--</div>-->
+        <form action="" th:action="|/hhhh/top?modelNum=${product.modelNum}|" method="post">
+            <input type="hidden" value="" th:value="${session.userID}" name="userID">
+            <ul style="width: 100%; list-style: none;">
+                <li style="width: 100%; list-style: none;">
+                    <ul class="re_re" >
+                        <li class="re_id">후기 남기기</li>
+                        <input type="textarea" name="content" class="re_content2">
+                        <li class="re_time"><input type="submit" class="button1" value="확인"></li>
 
+                    </ul>
+                </li>
+            </ul>
+        </form>
+
+
+</div>
+<div style="width: 60%; height: 60px;"></div>
 
 
 </body>

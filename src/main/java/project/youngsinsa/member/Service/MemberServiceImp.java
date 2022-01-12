@@ -42,7 +42,7 @@ public class MemberServiceImp implements MemberService{
 
         String userID = member.getUserID();
         String userPassword = member.getUserPassword();
-        List<Member> result =  memberDao.loginOK(member);
+        List<Member> result =  memberRepository.loginOK(member);
         Member m = result.get(0);
         String id = m.getUserID();
         String password = m.getUserPassword();
@@ -56,9 +56,57 @@ public class MemberServiceImp implements MemberService{
     //회원정보 업데이트
     @Override
     public String memberUpdate(Member member) {
-        memberDao.memberUpdate(member);
+        memberRepository.memberUpdate(member);
 
         return member.getUserID();
+    }
+    //아이디찾기
+    @Override
+    public String findID(String userID) {
+
+
+        return null;
+    }
+
+    @Override
+    public int memberInsert(Member member) {
+        return 0;
+    }
+
+    @Override
+    public int memberIdCheck(String id) {
+        return 0;
+    }
+
+
+    @Override
+    public int memberUpdateOk(Member member) {
+        return 0;
+    }
+
+    @Override
+    public int memberDelete(String id, String password) {
+        return 0;
+    }
+
+    @Override
+    public List<Member> memberList() {
+        return null;
+    }
+
+    @Override
+    public String memberFindId(String name, String phone) {
+        return null;
+    }
+
+    @Override
+    public int checkIdAndEmail(String id, String email) {
+        return 0;
+    }
+
+    @Override
+    public int changePassword(String id, String password, String authKey) {
+        return 0;
     }
 
 

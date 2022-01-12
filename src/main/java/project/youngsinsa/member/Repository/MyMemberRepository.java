@@ -33,9 +33,11 @@ public class MyMemberRepository implements MemberRepository {
 
     }
 
+
+
     @Override
     //로그인
-    public List<Member> login(Member member) {
+    public List<Member> loginOK(Member member) {
         return  em.createQuery("select m from Member m where m.userID = :name", Member.class)
                 .setParameter("name", member.getUserID())
                 .getResultList();

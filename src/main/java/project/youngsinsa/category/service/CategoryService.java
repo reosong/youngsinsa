@@ -3,6 +3,7 @@ package project.youngsinsa.category.service;
 
 import org.springframework.stereotype.Service;
 import project.youngsinsa.category.domain.Category;
+import project.youngsinsa.category.domain.Comment;
 
 import java.util.List;
 
@@ -11,4 +12,8 @@ public interface CategoryService {
     List<Category> showTopList(Category category);
 
     List<Category> showTopList();
+
+    Category showOne(int modelNum);
+
+    Comment writeComment(Comment comment);
 }
