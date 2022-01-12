@@ -37,7 +37,7 @@ public class CategoryServiceImp implements CategoryService{
     }
     //상세페이지보기
     @Override
-    public Category showOne(int modelNum) {
+    public Category showOne(String modelNum) {
         return categoryRepository.showOne(modelNum);
     }
 
@@ -55,4 +55,5 @@ public class CategoryServiceImp implements CategoryService{
         categoryRepository.writeComment(comment);
         return comment;
     }
+
 }

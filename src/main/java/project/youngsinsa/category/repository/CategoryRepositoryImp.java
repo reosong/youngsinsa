@@ -30,7 +30,7 @@ public class CategoryRepositoryImp implements CategoryRepository {
 
     //상품 상세페이지
     @Override
-    public Category showOne(int modelNum) {
+    public Category showOne(String modelNum) {
         return (Category) em.createQuery("select c from CategoryTop c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
@@ -67,7 +67,7 @@ public class CategoryRepositoryImp implements CategoryRepository {
     }
     //댓글 불러오기
     @Override
-    public List<Comment> loadComment(int modelNum) {
+    public List<Comment> loadComment(String modelNum) {
         List<Comment> list =  em.createQuery("select c from Comment c where modelNum = :modelNum")
                 .setParameter("modelNum",modelNum)
                 .getResultList();

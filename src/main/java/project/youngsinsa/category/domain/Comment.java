@@ -15,7 +15,7 @@ public class Comment {
     @Id
     private int num;
     private String userID;
-    private int modelNum;
+    private String modelNum;
     private String content;
     private String date;
 }

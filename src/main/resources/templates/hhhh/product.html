@@ -295,17 +295,18 @@
                 <li class="re_time" style="font-size: 20px; font-weight: bold;">작성 시간</li>
             </ul>
         </li>
-        <div>
-<!--        <div th:each="">-->
+
+        <div th:each="com:${comment}">
             <li style="width: 100%; list-style: none;">
                 <ul class="re_title">
-                    <li class="re_id" >송영서</li>
-                    <li class="re_content">가나다라마바사</li>
-                    <li class="re_time">2022-01-12</li>
+                    <li class="re_id"  th:text="${com.userID}">송영서</li>
+                    <li class="re_content" th:text="${com.content}">가나다라마바사</li>
+                    <li class="re_time" th:text="${com.date}">2022-01-12</li>
                 </ul>
             </li>
+        </div>
 
-
+        <div style="margin-top:30px;">
         <form action="" th:action="|/hhhh/top?modelNum=${product.modelNum}|" method="post">
             <input type="hidden" value="" th:value="${session.userID}" name="userID">
             <ul style="width: 100%; list-style: none;">
@@ -319,9 +320,9 @@
                 </li>
             </ul>
         </form>
+        </div>
 
 
-</div>
 <div style="width: 60%; height: 60px;"></div>
 
 

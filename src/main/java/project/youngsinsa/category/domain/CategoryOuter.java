@@ -14,7 +14,7 @@ public class CategoryOuter {
     private String form;
 
     @Id
-    private int modelNum;
+    private String modelNum;
     private String modelName;
     private String modelBrand;
     private int price;
@@ -32,7 +32,7 @@ public class CategoryOuter {
     public CategoryOuter() {
     }
 
-    public CategoryOuter(String form, int modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int likeNum) {
+    public CategoryOuter(String form, String modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int likeNum) {
         this.form = form;
         this.modelNum = modelNum;
         this.modelName = modelName;

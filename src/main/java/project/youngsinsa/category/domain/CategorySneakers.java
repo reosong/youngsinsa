@@ -13,7 +13,7 @@ public class CategorySneakers {
     //
     private String form;
     @Id
-    private int modelNum;
+    private String modelNum;
     private String modelName;
     private String modelBrand;
     private int price;
@@ -31,7 +31,7 @@ public class CategorySneakers {
     public CategorySneakers() {
     }
 
-    public CategorySneakers(String form, int modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int likeNum) {
+    public CategorySneakers(String form, String modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int likeNum) {
         this.form = form;
         this.modelNum = modelNum;
         this.modelName = modelName;

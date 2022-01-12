@@ -49,20 +49,21 @@ public class CategoryController {
     //top 상품 상세 페이지
     @GetMapping("/hhhh/top")
     public ModelAndView showOne(HttpServletRequest request, Model model) {
-        int modelNum = Integer.parseInt(request.getParameter("modelNum"));
 
-        int num = Integer.parseInt(request.getParameter("modelNum"));
+
+        String num = request.getParameter("modelNum");
         Category product = categoryService.showOne(num);
+        List<Comment> com = categoryRepository.loadComment(num);
 
         ModelAndView mv = new ModelAndView("hhhh/product");
         mv.addObject("product", product);
+        mv.addObject("comment",com);
 
 
         return mv;
     }
 
     //댓글쓰기
-    //로그인 유무 따져야함
     @PostMapping("hhhh/top")
     public ModelAndView writeComment(HttpServletRequest request, Comment comment) {
 
@@ -72,9 +73,13 @@ public class CategoryController {
             comment.setUserID(id);
 
             categoryService.writeComment(comment);
-//        String url = "./hhhh/top?modelNum=" + request.getParameter("modelNum");
-            String url = "redirect:/";
+            String url = "hhhh/product";
             ModelAndView mv = new ModelAndView(url);
+            String num = request.getParameter("modelNum");
+            Category product = categoryService.showOne(num);
+            List<Comment> com = categoryRepository.loadComment(num);
+            mv.addObject("product", product);
+            mv.addObject("comment", com);
 
             return mv;
         }else if(request.getSession().getAttribute("userID")==null){

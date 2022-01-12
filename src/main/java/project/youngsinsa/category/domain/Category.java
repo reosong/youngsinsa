@@ -12,7 +12,7 @@ public class Category {
 
         //
         private String form;
-        private int modelNum;
+        private String modelNum;
         private String modelName;
         private String modelBrand;
         private int price;

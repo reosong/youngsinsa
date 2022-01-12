@@ -24,6 +24,11 @@ public class CategoryDaoImp implements CategoryDao{
 
     @Override
     public Category showOne(int modelNum) {
+        return null;
+    }
+
+    @Override
+    public Category showOne(String modelNum) {
         return categoryRepository.showOne(modelNum);
     }
 

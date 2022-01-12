@@ -13,6 +13,8 @@ public interface CategoryDao {
     //각자의 상품 세부 페이지
     Category showOne(int modelNum);
 
+    Category showOne(String modelNum);
+
     //좋아요 수 올리기
     public void like(Category category);
 

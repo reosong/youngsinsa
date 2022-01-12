@@ -13,7 +13,7 @@ public interface CategoryService {
 
     List<Category> showTopList();
 
-    Category showOne(int modelNum);
+    Category showOne(String modelNum);
 
     Comment writeComment(Comment comment);
 }

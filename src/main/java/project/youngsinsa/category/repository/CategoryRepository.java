@@ -13,11 +13,14 @@ public interface CategoryRepository {
 
     //카테고리 화면
     public List<Category> showList(Category category);
-    //상품 상세페이지
-    Category showOne(int modelNum);
+
+
 
     //현재시간 가져오기
 //    String getDate();
+
+    //상품 상세페이지
+    Category showOne(String modelNum);
 
     //댓글 쓰기
     void writeComment(Comment comment);
@@ -27,5 +30,5 @@ public interface CategoryRepository {
     int LastCommentNum();
 
     //댓글 불러오기
-    List<Comment> loadComment(int modelNum);
+    List<Comment> loadComment(String modelNum);
 }

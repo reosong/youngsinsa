@@ -13,7 +13,7 @@ public class CategoryTop extends Category{
     //
     private String form;
     @Id
-    private int modelNum;
+    private String modelNum;
     private String modelName;
     private String modelBrand;
     private int price;
@@ -31,7 +31,7 @@ public class CategoryTop extends Category{
     public CategoryTop() {
     }
 
-    public CategoryTop(String form, int modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int likeNum) {
+    public CategoryTop(String form, String modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int likeNum) {
         this.form = form;
         this.modelNum = modelNum;
         this.modelName = modelName;
