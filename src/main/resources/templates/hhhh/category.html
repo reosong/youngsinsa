@@ -12,7 +12,11 @@
         a:hover{text-decoration: none;color: black;}
 
         </style>
-  <link rel="stylesheet" href="../musinsa/cate.css?ver2">
+<!--  <link rel="stylesheet" href="../musinsa/cate.css?22">-->
+<!--  <link rel="stylesheet" href="./musinsa/cate.css?11">-->
+  <link rel="stylesheet" href="/musinsa/cate.css?11">
+  <link href="${pageContext.request.contextPath}/musinsa/cate.css" rel="stylesheet" />
+
   <link rel="import" href="../hhhh/header.html">
 
 </head>
@@ -148,7 +152,7 @@
 
         <ul class="product" th:each="user : ${list}">
 
-          <a href="" th:href="@{./top?modelNum={name}(name=${user.modelNum})}">
+          <a href="" th:href="@{./top/topNum?modelNum={name}(name=${user.modelNum})}">
 
             <div style="text-align: center;"><img th:src="${user.photo1}" ></div>
             <li class="product_li1" th:text="${user.modelName}">상의 1</li>
