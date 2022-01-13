@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import project.youngsinsa.category.domain.Category;
 import project.youngsinsa.category.domain.Comment;
+import project.youngsinsa.category.domain.Style;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -17,8 +18,6 @@ public class CategoryRepositoryImp implements CategoryRepository {
     public CategoryRepositoryImp(EntityManager em) {
         this.em = em;
     }
-
-
 
 
     //카테고리 화면
@@ -53,28 +52,36 @@ public class CategoryRepositoryImp implements CategoryRepository {
     //댓글 쓰기
     @Override
     @Transactional
-    public void writeComment(Comment comment){
+    public void writeComment(Comment comment) {
         em.persist(comment);
     }
 
     //댓글 마지막 번호 가져오기
     @Override
     @Transactional
-    public int LastCommentNum(){
+    public int LastCommentNum() {
         List<Comment> list = em.createQuery("select c from Comment c order by num desc").getResultList();
         int num = list.get(0).getNum();
         return num;
     }
+
     //댓글 불러오기
     @Override
     public List<Comment> loadComment(String modelNum) {
-        List<Comment> list =  em.createQuery("select c from Comment c where modelNum = :modelNum")
-                .setParameter("modelNum",modelNum)
+        List<Comment> list = em.createQuery("select c from Comment c where modelNum = :modelNum")
+                .setParameter("modelNum", modelNum)
                 .getResultList();
         return list;
 
     }
 
+    //스타일 불러오기
+    @Override
+    public List<Style> loadStyle() {
+        List<Style> list = em.createQuery("select s from Style s order by likeNum desc")
+                .getResultList();
+        return list;
+    }
 
 
 }

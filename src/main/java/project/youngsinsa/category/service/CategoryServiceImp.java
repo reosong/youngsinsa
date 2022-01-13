@@ -6,6 +6,7 @@ import project.youngsinsa.category.Dao.CategoryDao;
 import project.youngsinsa.category.domain.Category;
 import project.youngsinsa.category.domain.CategoryTop;
 import project.youngsinsa.category.domain.Comment;
+import project.youngsinsa.category.domain.Style;
 import project.youngsinsa.category.repository.CategoryRepository;
 
 import java.time.LocalDateTime;
@@ -21,6 +22,7 @@ public class CategoryServiceImp implements CategoryService{
         this.categoryRepository = categoryRepository;
         this.categoryDao = categoryDao;
     }
+
     int count =0;
     @Override
     public List<Category> showTopList(Category category) {
@@ -54,6 +56,12 @@ public class CategoryServiceImp implements CategoryService{
         comment.setDate(date);
         categoryRepository.writeComment(comment);
         return comment;
+    }
+
+    //스타일 리스트 가져오기
+    @Override
+    public List<Style> loadStyle() {
+        return categoryRepository.loadStyle();
     }
 
 }

@@ -1,7 +1,7 @@
 
 
-<script type="text/javascript"> 
-    var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson'); 
+<script type="text/javascript">
+    var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
     for (var word in mobileKeyWords){ if (navigator.userAgent.match(mobileKeyWords[word]) != null)
     { location.href = "http://ambition.dothome.co.kr/hhhh/mmusinsa.html"; break; } } </script>
 
@@ -19,12 +19,12 @@ a:link{text-decoration: none;color: black;}
 a:visited{text-decoration: none;color: black;}
 a:active{text-decoration: none;color: black;}
 a:hover{text-decoration: none;color: black;}
-    
+
 </style>
     <script src="./toto.js"></script>
 
     <link rel="stylesheet" href="musinsa/musinsa.css">
-    <link rel="stylesheet" href="../musinsa/musinsa.css">
+    <link rel="stylesheet" media="screen and (min-width: 600px)" href="./hhhh/mmusinsa.html"/>
 
 
 </head>
@@ -36,7 +36,7 @@ a:hover{text-decoration: none;color: black;}
     <div id="header_div">
         <a href="./index.html" class="no_line" style="color: white;">
             <b>YOUNGSINSA STORE</b></a>
-<!--        <input type="text" size="23px" class="hidden_text2">-->
+        <input type="text" size="23px" class="hidden_text2">
     </div>
     <div id="header_div2">
         <ul>
@@ -58,7 +58,7 @@ a:hover{text-decoration: none;color: black;}
 
 <div>
     <ul id="rest">
-        <a href="/hhhh/login"><li id="rest_li"  style="padding:15px 0 0 0;"> 로그인</li></a>
+        <a href="/hhhh/login"><li id="rest_li" th:text="${session.userID}" style="padding:15px 0 0 0;"> 로그인</li></a>
         <a href="/hhhh/menu5.html"><li id="rest_li" style="height: 40px;">장바 <br>구니</li></a>
         <a href="#header_2"><li id="rest_li" style="padding:15px 0 0 0;"> TOP </li></a>
     </ul>
@@ -79,20 +79,18 @@ a:hover{text-decoration: none;color: black;}
 <header id="header_3">
     <ul>
         <li>
-            <a href="/hhhh/login" class="no_line" style="color: black;" th:if="${session.userID==null}" th:text="'로그인'">
-                로그인</a>
-            <a href="/hhhh/login" class="no_line" style="color: black;" th:unless="${session.userID==null}" th:text="${session.userID}">
+            <a href="/hhhh/login" class="no_line" style="color: black;" th:text="${userID}">
                 로그인</a>
         </li>
         <li class="sky" >바로접속 On</li>
-        <li> <a href="./menu1">알림</a></li>
-        <li><a href="./hhhh/myPage"> 마이페이지</a></li>
-        <li>  <a href="./menu3"> 최근 본 상품</a></li>
-        <li><a href="./menu4"> 좋아요</a></li>
-        <li><a href="./menu5">장바구니</a></li>
-        <li><a href="./menu6"> 주문배송조회</a></li>
-        <li><a href="./menu7"> 고객센터 </a></li>
-        <li><a href="./hhhh/logout">로그아웃</a></li>
+        <li> <a href="./hhhh/menu1.html">알림</a></li>
+        <li><a href="./hhhh/menu2.html"> 마이페이지</a></li>
+        <li>  <a href="./hhhh/menu3.html"> 최근 본 상품</a></li>
+        <li><a href="./hhhh/menu4.html"> 좋아요</a></li>
+        <li><a href="./hhhh/menu5.html">장바구니</a></li>
+        <li><a href="./hhhh/menu6.html"> 주문배송조회</a></li>
+        <li><a href="./hhhh/menu7.html"> 고객센터 </a></li>
+        <li><a href="./hhhh/login/logout">로그아웃</a></li>
         <li class="sky"><a href="./hhhh/menu9.html"> 친구초대 EVENT</a></li>
     </ul>
 </header>
@@ -104,34 +102,35 @@ a:hover{text-decoration: none;color: black;}
 <aside id="aside_a">
     <nav id="navbar">
         <ul class="navbar_menu" style="list-style: none;">
-            <a href="./hhhh/best.html">
+            <a href="./category/best">
                 <li class="aside_li">인기<span class="aside_small">&nbsp; Best</span></li>
             </a>
+
             <a href="./hhhh/category">
                 <li class="aside_li">상의 <span class="aside_small">&nbsp; Top</span></li>
             </a>
-            <a href="./hhhh/outer.html">
+            <a href="./category/outer">
                 <li class="aside_li">아우터<span class="aside_small">&nbsp; Outer</span></li>
             </a>
-            <a href="./hhhh/pants.html">
+            <a href="./category/bottom">
                 <li class="aside_li">바지<span class="aside_small">&nbsp; Pants</span></li>
             </a>
-            <a href="./hhhh/onepiece.html">
+            <a href="./category/onepiece">
                 <li class="aside_li">원피스<span class="aside_small">&nbsp; Onepiece</span></li>
             </a>
-            <a href="./hhhh/skirt.html">
+            <a href="./category/skirt">
                 <li class="aside_li">스커트<span class="aside_small">&nbsp; Skirt</span></li>
             </a>
-            <a href="./hhhh/sneakers.html">
+            <a href="./category/sneakers">
                 <li class="aside_li">스니커즈<span class="aside_small">&nbsp; Sneakers</span></li>
             </a>
-            <a href="./hhhh/shoes.html">
+            <a href="./category/shoes">
                 <li class="aside_li">신발<span class="aside_small">&nbsp; Shoes</span></li>
             </a>
-            <a href="./hhhh/bag.html">
+            <a href="./category/bag">
                 <li class="aside_li">가방<span class="aside_small">&nbsp; Bag</span></li>
             </a>
-            <li class="aside_li">여성가방<span class="aside_small">&nbsp; Women's bag</span></li>
+
             <li class="aside_li">선글라스<span class="aside_small">&nbsp; Sunglass</span></li>
             <li class="aside_li">액세서리<span class="aside_small">&nbsp; Accessory</span></li>
             <li class="aside_li">시계<span class="aside_small">&nbsp; Watch</span></li>

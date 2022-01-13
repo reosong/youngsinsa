@@ -39,7 +39,6 @@ public class CategoryController {
     public ModelAndView showTop(Model model) {
 
         List<Category> list = categoryService.showTopList();
-
         ModelAndView mv = new ModelAndView("hhhh/category");
         mv.addObject("list", list);
         return mv;
@@ -50,7 +49,6 @@ public class CategoryController {
     @GetMapping("/hhhh/top")
     public ModelAndView showOne(HttpServletRequest request, Model model) {
 
-
         String num = request.getParameter("modelNum");
         Category product = categoryService.showOne(num);
         List<Comment> com = categoryRepository.loadComment(num);
@@ -58,10 +56,10 @@ public class CategoryController {
         ModelAndView mv = new ModelAndView("hhhh/product");
         mv.addObject("product", product);
         mv.addObject("comment",com);
-
-
         return mv;
     }
+
+
 
     //댓글쓰기
     @PostMapping("hhhh/top")
@@ -73,8 +71,7 @@ public class CategoryController {
             comment.setUserID(id);
 
             categoryService.writeComment(comment);
-            String url = "hhhh/product";
-            ModelAndView mv = new ModelAndView(url);
+            ModelAndView mv = new ModelAndView("hhhh/product");
             String num = request.getParameter("modelNum");
             Category product = categoryService.showOne(num);
             List<Comment> com = categoryRepository.loadComment(num);
@@ -87,4 +84,17 @@ public class CategoryController {
         }
         return new ModelAndView("redirect:/");
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
