@@ -71,9 +71,9 @@ public class ProductController {
 
             return mv;
         }else if(request.getSession().getAttribute("userID")==null){
-            return new ModelAndView("redirect:/");
+            return new ModelAndView("redirect:/localhost:8080/hhhh");
         }
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/localhost:8080/hhhh");
     }
 
 

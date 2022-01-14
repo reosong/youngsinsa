@@ -12,8 +12,9 @@
         a:hover{text-decoration: none;color: black;}
 
         </style>
-<!--    <link rel="stylesheet" href="../musinsa/product.css?ver2">-->
-    <link rel="stylesheet" href="/musinsa/product.css?11">
+    <!--    <link rel="stylesheet" href="../musinsa/product.css?ver2">-->
+    <link rel="stylesheet" href="/musinsa/product.css?13">
+
     <link href="${pageContext.request.contextPath}/musinsa/product.css" rel="stylesheet" />
 </head>
 <body>
@@ -70,7 +71,7 @@
 
 <div>
     <ul id="rest">
-        <a href="../hhhh/login.html"><li id="rest_li" style="padding:15px 0 0 0;"> 로그인</li></a>
+        <a href="redirect:/localhost:8080/hhhh/login"><li id="rest_li"  style="padding:15px 0 0 0;"> 로그인</li></a>
         <a href="../hhhh/menu5.html"><li id="rest_li" style="height: 40px;">장바 <br>구니</li></a>
         <a href="#header_2"><li id="rest_li" style="padding:15px 0 0 0;"> TOP </li></a>
     </ul>
@@ -237,15 +238,15 @@
         <section id="info_2">
 
             <div id="location" >
-                <form action="">
+                <form action="" class="subbox">
                     <input type="hidden">
                     <input type="submit" value="구매하기" id="buy">
                 </form>
-                <form action="">
+                <form action="" class="subbox">
                     <input type="hidden">
                     <input type="submit" value="장바구니" id="chart">
                 </form>
-                <form action="">
+                <form action="" class="subbox">
                     <input type="hidden">
                     <input type="submit" value="좋아요" id="likePlus">
                 </form>
@@ -316,23 +317,23 @@
         </div>
 
         <div style="margin-top:30px;">
-        <form action="" th:action="|/hhhh/top?modelNum=${product.modelNum}|" method="post">
-            <input type="hidden" value="" th:value="${session.userID}" name="userID">
-            <ul style="width: 100%; list-style: none;">
-                <li style="width: 100%; list-style: none;">
-                    <ul class="re_re" >
-                        <li class="re_id">후기 남기기</li>
-                        <input type="textarea" name="content" class="re_content2">
-                        <li class="re_time"><input type="submit" class="button1" value="확인"></li>
+            <form action="" th:action="|/hhhh/category/top/topNum?modelNum=${product.modelNum}|" method="post">
+                <input type="hidden" value="" th:value="${session.userID}" name="userID">
+                <ul style="width: 100%; list-style: none;">
+                    <li style="width: 100%; list-style: none;">
+                        <ul class="re_re" >
+                            <li class="re_id">후기 남기기</li>
+                            <input type="textarea" name="content" class="re_content2">
+                            <li class="re_time"><input type="submit" class="button1" value="확인"></li>
 
-                    </ul>
-                </li>
-            </ul>
-        </form>
+                        </ul>
+                    </li>
+                </ul>
+            </form>
         </div>
 
 
-<div style="width: 60%; height: 60px;"></div>
+        <div style="width: 60%; height: 60px;"></div>
 
 
 </body>

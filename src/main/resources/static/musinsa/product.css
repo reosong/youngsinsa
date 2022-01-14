@@ -47,7 +47,7 @@
 
 }
 #header_div{
-padding-left: 50px;
+
     width: 50%;
     height: 50px;
     font-size: 40px;
@@ -224,8 +224,11 @@ main{
 
 
 #info_2{
+    margin-top: 30px;
     width: 100%;
     height: 150px;
+
+
 
 
 }
@@ -270,7 +273,7 @@ main{
 }
 #buy{
     width: 100px;
-    height: 50px;
+    height: 60px;
     background-color: black;
     color: white;
     font-weight: bold;
@@ -280,7 +283,7 @@ main{
 }
 #chart{
     width: 100px;
-    height: 50px;
+    height: 60px;
     background-color: gray;
     color: black;
     font-weight: bold;
@@ -290,7 +293,7 @@ main{
     border: none;
 }
 #likePlus{
-    width: 80px;
+    width: 60px;
     height: 40px;
     background-color: rgb(238, 6, 122);
     color: white;
@@ -364,10 +367,15 @@ main{
 .button1{
     width: 70px;
     height: 40px;
-     background-color: black;
-        color: white;
+    background-color: black;
+    color: white;
     font-size: 20px;
     font-weight: bold;
     border: none;
     border-radius: 20px;
+}
+.subbox{
+    width:90px;
+    display: inline;
+   margin-right: 20px;
 }
