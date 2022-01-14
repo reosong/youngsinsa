@@ -26,9 +26,9 @@
 <!--영신사 스토어 헤더  -->
 <header id="header_mu">
   <div id="header_div">
-    <a href="./index.html" class="no_line" style="color: white;">
+    <a href="/hhhh" class="no_line" style="color: white;">
       <b>YOUNGSINSA STORE</b></a>
-    <input type="text" size="23px" class="hidden_text2">
+
   </div>
   <div id="header_div2">
     <ul>
@@ -57,15 +57,6 @@
 
 </div>
 
-<!--스탠다드 쪽 헤더 -->
-<header id="header_2">
-  <ul>
-    <li>스탠다드</li>
-    <li>테라스샵</li>
-    <li>셀렉트</li>
-  </ul>
-
-</header>
 
 <!--개인정보 헤더 -->
 <header id="header_3">
@@ -76,16 +67,18 @@
       <a href="/hhhh/login" class="no_line" style="color: black;" th:unless="${session.userID==null}" th:text="${session.userID}">
         로그인</a>
     </li>
-    <li class="sky" >바로접속 On</li>
-    <li> <a href="./menu1">알림</a></li>
-    <li><a href="./login/myPage"> 마이페이지</a></li>
-    <li>  <a href="./menu3"> 최근 본 상품</a></li>
-    <li><a href="./menu4"> 좋아요</a></li>
-    <li><a href="./menu5">장바구니</a></li>
-    <li><a href="./menu6"> 주문배송조회</a></li>
-    <li><a href="./menu7"> 고객센터 </a></li>
-    <li><a href="./logout">로그아웃</a></li>
-    <li class="sky"><a href="./hhhh/menu9.html"> 친구초대 EVENT</a></li>
+    <li class="sky" >
+      <a href="/hhhh/login" class="no_line" style="color: rgb(23, 177, 238);" th:if="${session.userID==null}" th:text="'바로접속 off'">
+        바로접속</a>
+      <a href="/hhhh/login" class="no_line"  style="color: rgb(23, 177, 238);" th:unless="${session.userID==null}" th:text="'바로접속 on'">
+        바로접속</a>
+    </li>
+    <li><a href="./hhhh/myPage"> 마이페이지</a></li>
+    <li><a href="./hhhh/cart">장바구니</a></li>
+    <li><a href="./hhhh/orderSearch"> 주문배송조회</a></li>
+    <li><a href="./hhhh/costomer"> 고객센터 </a></li>
+    <li><a href="./hhhh/logout">로그아웃</a></li>
+
   </ul>
 </header>
 
@@ -97,38 +90,45 @@
 <aside id="aside_a">
   <section>
     <ul class="navbar_menu" style="list-style: none;">
-      <a href="./best.html">
+      <a href="./hhhh/category/bset">
         <li class="aside_li">인기<span class="aside_small">&nbsp; Best</span></li>
       </a>
-      <a href="./top.html">
+      <a href="./hhhh/category/top">
         <li class="aside_li">상의 <span class="aside_small">&nbsp; Top</span></li>
       </a>
-      <a href="./outer.html">
+      <a href="./hhhh/category/outer">
         <li class="aside_li">아우터<span class="aside_small">&nbsp; Outer</span></li>
       </a>
-      <a href="./pants.html">
+      <a href="./hhhh/category/bottom">
         <li class="aside_li">바지<span class="aside_small">&nbsp; Pants</span></li>
       </a>
-      <a href="./onepiece.html">
+      <a href="./hhhh/category/onepiece">
         <li class="aside_li">원피스<span class="aside_small">&nbsp; Onepiece</span></li>
       </a>
-      <a href="./skirt.html">
+      <a href="./hhhh/category/skirt">
         <li class="aside_li">스커트<span class="aside_small">&nbsp; Skirt</span></li>
       </a>
-      <a href="./sneakers.html">
+      <a href="./hhhh/category/sneakers">
         <li class="aside_li">스니커즈<span class="aside_small">&nbsp; Sneakers</span></li>
       </a>
-      <a href="./shoes.html">
+      <a href="./hhhh/category/shoes">
         <li class="aside_li">신발<span class="aside_small">&nbsp; Shoes</span></li>
       </a>
-      <a href="./bag.html">
+      <a href="./hhhh/category/bag">
         <li class="aside_li">가방<span class="aside_small">&nbsp; Bag</span></li>
       </a>
-      <li class="aside_li">여성가방<span class="aside_small">&nbsp; Women's bag</span></li>
-      <li class="aside_li">선글라스<span class="aside_small">&nbsp; Sunglass</span></li>
-      <li class="aside_li">액세서리<span class="aside_small">&nbsp; Accessory</span></li>
-      <li class="aside_li">시계<span class="aside_small">&nbsp; Watch</span></li>
-      <li class="aside_li">주얼리<span class="aside_small">&nbsp; Jewelry</span></li>
+      <a href="./hhhh/category/sunglass">
+        <li class="aside_li">선글라스<span class="aside_small">&nbsp; Sunglass</span></li>
+      </a>
+      <a href="./hhhh/category/accessory">
+        <li class="aside_li">액세서리<span class="aside_small">&nbsp; Accessory</span></li>
+      </a>
+      <a href="./hhhh/category/watch">
+        <li class="aside_li">시계<span class="aside_small">&nbsp; Watch</span></li>
+      </a>
+      <a href="./hhhh/category/jewelry">
+        <li class="aside_li">주얼리<span class="aside_small">&nbsp; Jewelry</span></li>
+      </a>
     </ul>
   </section>
 
@@ -148,23 +148,44 @@
 <main>
   <section id="section1">
     <ul>
-      <li class="section1_li">
 
-        <ul class="product" th:each="user : ${list}">
-
-          <a href="" th:href="@{./top/topNum?modelNum={name}(name=${user.modelNum})}">
-
-            <div style="text-align: center;"><img th:src="${user.photo1}" ></div>
-            <li class="product_li1" th:text="${user.modelName}">상의 1</li>
-            <li class="product_li2" th:text="${user.modelBrand}"> 무신사 </li>
-            <li class="product_li3"th:text="|${user.price}원|" >30000원</li>
+      <li class="section1_li" >
+        <ul class="product" >
+          <a href="" th:href="@{./top/topNum?modelNum={name}(name=${list.get(0).modelNum})}">
+            <div style="text-align: center;"><img th:src="${list.get(0).photo1}" ></div>
+            <li class="product_li1" th:text="${list.get(0).modelName}">상의 1</li>
+            <li class="product_li2" th:text="${list.get(0).modelBrand}"> 무신사 </li>
+            <li class="product_li3"th:text="|${list.get(0).price}원|" >30000원</li>
           </a>
-
         </ul>
       </li>
+
+      <li class="section1_li" >
+        <ul class="product" >
+          <a href="" th:href="@{./top/topNum?modelNum={name}(name=${list.get(1).modelNum})}">
+            <div style="text-align: center;"><img th:src="${list.get(1).photo1}" ></div>
+            <li class="product_li1" th:text="${list.get(1).modelName}">상의 1</li>
+            <li class="product_li2" th:text="${list.get(1).modelBrand}"> 무신사 </li>
+            <li class="product_li3"th:text="|${list.get(1).price}원|" >30000원</li>
+          </a>
+        </ul>
+      </li>
+
+<!--      <li class="section1_li" >-->
+<!--        <ul class="product" >-->
+<!--          <a href="" th:href="@{./top/topNum?modelNum={name}(name=${list.get(2).modelNum})}">-->
+<!--            <div style="text-align: center;"><img th:src="${list.get(2).photo1}" ></div>-->
+<!--            <li class="product_li1" th:text="${list.get(2).modelName}">상의 1</li>-->
+<!--            <li class="product_li2" th:text="${list.get(2).modelBrand}"> 무신사 </li>-->
+<!--            <li class="product_li3"th:text="|${list.get(2).price}원|" >30000원</li>-->
+<!--          </a>-->
+<!--        </ul>-->
+<!--      </li>-->
+
+
       <li class="section1_li">
         <ul class="product">
-          <div style="text-align: center;"><img src="../images/top/top2-1.jpeg" alt=""></div>
+          <div style="text-align: center;"><img src="images/bluejean.jpeg" class="image_size_big"></div>
           <li class="product_li1">상의 1</li>
           <li class="product_li2">무신사 스탠다드</li>
           <li class="product_li3">30000원</li>
@@ -173,25 +194,7 @@
       </li>
       <li class="section1_li">
         <ul class="product">
-          <div style="text-align: center;"><img src="../images/top/top2-1.jpeg" alt=""></div>
-          <li class="product_li1">상의 1</li>
-          <li class="product_li2">무신사 스탠다드</li>
-          <li class="product_li3">30000원</li>
-
-        </ul>
-      </li>
-      <li class="section1_li">
-        <ul class="product">
-          <div style="text-align: center;"><img src="../images/top/top2-1.jpeg" alt=""></div>
-          <li class="product_li1">상의 1</li>
-          <li class="product_li2">무신사 스탠다드</li>
-          <li class="product_li3">30000원</li>
-
-        </ul>
-      </li>
-      <li class="section1_li">
-        <ul class="product">
-          <div style="text-align: center;"><img src="../images/top/top2-1.jpeg" alt=""></div>
+          <div style="text-align: center;"><img src="images/bluejean.jpeg" class="image_size_big"></div>
           <li class="product_li1">상의 1</li>
           <li class="product_li2">무신사 스탠다드</li>
           <li class="product_li3">30000원</li>
@@ -203,48 +206,48 @@
     </ul>
     <div style="width: 100%; height: 50px;"></div>
     <ul>
-      <li>
-        <ul id="product">
-          <div style="text-align: center;"><img src="../images/top/top9-1.jpeg" alt=""></div>
-          <li style="margin-top: 30px;">상의 1</li>
-          <li>무신사 스탠다드</li>
-          <li>30000원</li>
+      <li class="section1_li">
+        <ul class="product">
+          <div style="text-align: center;"><img src="images/bluejean.jpeg" class="image_size_big"></div>
+          <li class="product_li1">상의 1</li>
+          <li class="product_li2">무신사 스탠다드</li>
+          <li class="product_li3">30000원</li>
 
         </ul>
       </li>
-      <li>
-        <ul id="product">
-          <div style="text-align: center;"><img src="../images/top/top14-1.jpeg" alt=""></div>
-          <li style="margin-top: 30px;">상의 1</li>
-          <li>무신사 스탠다드</li>
-          <li>30000원</li>
+      <li class="section1_li">
+        <ul class="product">
+          <div style="text-align: center;"><img src="images/bluejean.jpeg" class="image_size_big"></div>
+          <li class="product_li1">상의 1</li>
+          <li class="product_li2">무신사 스탠다드</li>
+          <li class="product_li3">30000원</li>
 
         </ul>
       </li>
-      <li>
-        <ul id="product">
-          <div style="text-align: center;"><img src="../images/top/top13-1.jpeg" alt=""></div>
-          <li style="margin-top: 30px;">상의 1</li>
-          <li>무신사 스탠다드</li>
-          <li>30000원</li>
+      <li class="section1_li">
+        <ul class="product">
+          <div style="text-align: center;"><img src="images/bluejean.jpeg" class="image_size_big"></div>
+          <li class="product_li1">상의 1</li>
+          <li class="product_li2">무신사 스탠다드</li>
+          <li class="product_li3">30000원</li>
 
         </ul>
       </li>
-      <li>
-        <ul id="product">
-          <div style="text-align: center;"><img src="../images/top/top12-1.jpeg" alt=""></div>
-          <li style="margin-top: 30px;">상의 1</li>
-          <li>무신사 스탠다드</li>
-          <li>30000원</li>
+      <li class="section1_li">
+        <ul class="product">
+          <div style="text-align: center;"><img src="images/bluejean.jpeg" class="image_size_big"></div>
+          <li class="product_li1">상의 1</li>
+          <li class="product_li2">무신사 스탠다드</li>
+          <li class="product_li3">30000원</li>
 
         </ul>
       </li>
-      <li>
-        <ul id="product">
-          <div style="text-align: center;"><img src="../images/top/top11-1.jpeg" alt=""></div>
-          <li style="margin-top: 30px;">상의 1</li>
-          <li>무신사 스탠다드</li>
-          <li>30000원</li>
+      <li class="section1_li">
+        <ul class="product">
+          <div style="text-align: center;"><img src="images/bluejean.jpeg" class="image_size_big"></div>
+          <li class="product_li1">상의 1</li>
+          <li class="product_li2">무신사 스탠다드</li>
+          <li class="product_li3">30000원</li>
 
         </ul>
       </li>

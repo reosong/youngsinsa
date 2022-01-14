@@ -13,7 +13,7 @@ public interface MemberRepository {
     void findUser();
 
 
-
+    int findLevel(String userID);
 
     //로그인
     List<Member> loginOK(Member member);

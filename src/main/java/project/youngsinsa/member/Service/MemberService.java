@@ -18,6 +18,9 @@ public interface MemberService {
 
     String findID(String userID);
 
+    //아이디찾기
+    int findLevel(String userID);
+
     int memberInsert(Member member);
 
     int memberIdCheck(String id);

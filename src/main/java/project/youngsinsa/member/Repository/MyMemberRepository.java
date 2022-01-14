@@ -33,6 +33,14 @@ public class MyMemberRepository implements MemberRepository {
 
     }
 
+    @Override
+    public int findLevel(String userID) {
+        List<Member> member = em.createQuery("select m from Member m where m.userID = :name", Member.class)
+                .setParameter("name", userID)
+                .getResultList();
+     return member.get(0).getLevel();
+    }
+
 
 
     @Override

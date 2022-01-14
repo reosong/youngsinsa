@@ -60,12 +60,16 @@ public class MemberServiceImp implements MemberService{
 
         return member.getUserID();
     }
-    //아이디찾기
+
     @Override
     public String findID(String userID) {
-
-
         return null;
+    }
+
+    //관리자 아이디 찾기
+    @Override
+    public int findLevel(String userID) {
+        return  memberRepository.findLevel(userID);
     }
 
     @Override

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class CategoryPants {
+public class CategoryPants extends Category{
     //
     private String form;
     @Id

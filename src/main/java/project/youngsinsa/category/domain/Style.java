@@ -9,12 +9,12 @@ import javax.persistence.Id;
 
 @Getter
 @Setter
-@Entity
+
 public class Style {
 
 
         //
-        @Id
+
         private String StyleNum;
         private String modelName;
         private String modelBrand;

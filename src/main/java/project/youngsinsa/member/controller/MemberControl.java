@@ -58,17 +58,21 @@ public class MemberControl {
     @PostMapping("/login")
     public ModelAndView loginTry(Member member, HttpServletRequest request) {
         String result = memberService.login(member);
+        ModelAndView mv = new ModelAndView();
         if (result == null) {
-         ModelAndView mv = new ModelAndView("error");
+         mv.setViewName("error");
             return mv;
+        }
+
+        int level =memberService.findLevel(member.getUserID());
+        if(level == 99){
+            mv.setViewName("redirect:http://localhost:8080/admin");
+            return  mv;
         }
         HttpSession session = request.getSession();
         session.setAttribute("userID", member.getUserID());
-//        ModelAndView mv = new ModelAndView("hhhh/index");
+        mv.setViewName("hhhh/login");
 
-
-        ModelAndView mv = new ModelAndView("hhhh/main");
-        mv.addObject("style",categoryService.loadStyle());
         return mv;
     }
 
@@ -79,7 +83,7 @@ public class MemberControl {
         if (session.getAttribute("userID") == null) {
             return "hhhh/member";
         }else{
-            return "redirect:/";
+            return "hhhh/member";
         }
     }
     //회원가입
@@ -91,7 +95,7 @@ public class MemberControl {
         } else {
             return "hhhh/error";
         }
-        return "redirect:/";
+        return "localhost:8080/hhhh";
     }
 
 

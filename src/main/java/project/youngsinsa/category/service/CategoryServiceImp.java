@@ -59,9 +59,9 @@ public class CategoryServiceImp implements CategoryService{
     }
 
     //스타일 리스트 가져오기
-    @Override
-    public List<Style> loadStyle() {
-        return categoryRepository.loadStyle();
-    }
+//    @Override
+//    public List<Style> loadStyle() {
+//        return categoryRepository.loadStyle();
+//    }
 
 }

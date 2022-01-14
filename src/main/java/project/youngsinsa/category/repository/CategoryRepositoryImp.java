@@ -76,12 +76,12 @@ public class CategoryRepositoryImp implements CategoryRepository {
     }
 
     //스타일 불러오기
-    @Override
-    public List<Style> loadStyle() {
-        List<Style> list = em.createQuery("select s from Style s order by likeNum desc")
-                .getResultList();
-        return list;
-    }
+//    @Override
+//    public List<Style> loadStyle() {
+//        List<Style> list = em.createQuery("select s from Style s order by likeNum desc")
+//                .getResultList();
+//        return list;
+//    }
 
 
 }

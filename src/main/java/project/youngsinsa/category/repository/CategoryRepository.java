@@ -34,5 +34,5 @@ public interface CategoryRepository {
     List<Comment> loadComment(String modelNum);
 
     //스타일 불러오기
-    List<Style> loadStyle();
+//    List<Style> loadStyle();
 }

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class CategorySkirt {
+public class CategorySkirt extends Category{
     //
     private String form;
     @Id

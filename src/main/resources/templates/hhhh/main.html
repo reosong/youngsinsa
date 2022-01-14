@@ -34,7 +34,7 @@ a:hover{text-decoration: none;color: black;}
 <!--영신사 스토어 헤더  -->
 <header id="header_mu">
     <div id="header_div">
-        <a href="./index.html" class="no_line" style="color: white;">
+        <a href="./hhhh" class="no_line" style="color: white;">
             <b>YOUNGSINSA STORE</b></a>
 <!--        <input type="text" size="23px" class="hidden_text2">-->
     </div>
@@ -84,16 +84,18 @@ a:hover{text-decoration: none;color: black;}
             <a href="/hhhh/login" class="no_line" style="color: black;" th:unless="${session.userID==null}" th:text="${session.userID}">
                 로그인</a>
         </li>
-        <li class="sky" >바로접속 On</li>
-        <li> <a href="./menu1">알림</a></li>
+        <li class="sky" >
+            <a href="/hhhh/login" class="no_line" style="color: rgb(23, 177, 238);" th:if="${session.userID==null}" th:text="'바로접속 off'">
+                바로접속</a>
+            <a href="/hhhh/login" class="no_line"  style="color: rgb(23, 177, 238);" th:unless="${session.userID==null}" th:text="'바로접속 on'">
+                바로접속</a>
+        </li>
         <li><a href="./hhhh/myPage"> 마이페이지</a></li>
-        <li>  <a href="./menu3"> 최근 본 상품</a></li>
-        <li><a href="./menu4"> 좋아요</a></li>
-        <li><a href="./menu5">장바구니</a></li>
-        <li><a href="./menu6"> 주문배송조회</a></li>
-        <li><a href="./menu7"> 고객센터 </a></li>
+        <li><a href="./hhhh/cart">장바구니</a></li>
+        <li><a href="./hhhh/orderSearch"> 주문배송조회</a></li>
+        <li><a href="./hhhh/costomer"> 고객센터 </a></li>
         <li><a href="./hhhh/logout">로그아웃</a></li>
-        <li class="sky"><a href="./hhhh/menu9.html"> 친구초대 EVENT</a></li>
+
     </ul>
 </header>
 
@@ -128,13 +130,21 @@ a:hover{text-decoration: none;color: black;}
             <a href="./hhhh/category/shoes">
                 <li class="aside_li">신발<span class="aside_small">&nbsp; Shoes</span></li>
             </a>
-            <<a href="./hhhh/category/bag">
+            <a href="./hhhh/category/bag">
                 <li class="aside_li">가방<span class="aside_small">&nbsp; Bag</span></li>
             </a>
+            <a href="./hhhh/category/sunglass">
             <li class="aside_li">선글라스<span class="aside_small">&nbsp; Sunglass</span></li>
+            </a>
+            <a href="./hhhh/category/accessory">
             <li class="aside_li">액세서리<span class="aside_small">&nbsp; Accessory</span></li>
+            </a>
+            <a href="./hhhh/category/watch">
             <li class="aside_li">시계<span class="aside_small">&nbsp; Watch</span></li>
+            </a>
+            <a href="./hhhh/category/jewelry">
             <li class="aside_li">주얼리<span class="aside_small">&nbsp; Jewelry</span></li>
+            </a>
         </ul>
         <button class="navbar__toggle-btn">
             <i class="fas fa-bars"></i>

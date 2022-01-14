@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class CategoryOuter extends Category {
+public class CategoryAccessory extends Category {
     //
     private String form;
 
@@ -29,10 +29,10 @@ public class CategoryOuter extends Category {
     private String photo5;
     private String photo6;
 
-    public CategoryOuter() {
+    public CategoryAccessory() {
     }
 
-    public CategoryOuter(String form, String modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int likeNum) {
+    public CategoryAccessory(String form, String modelNum, String modelName, String modelBrand, int price, String season, String sex, int countNum, int likeNum) {
         this.form = form;
         this.modelNum = modelNum;
         this.modelName = modelName;

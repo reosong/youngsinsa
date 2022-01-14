@@ -19,5 +19,5 @@ public interface CategoryService {
     Comment writeComment(Comment comment);
 
     //스타일 리스트 가져오기
-    List<Style> loadStyle();
+//    List<Style> loadStyle();
 }
