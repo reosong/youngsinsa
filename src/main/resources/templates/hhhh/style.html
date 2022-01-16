@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영신사 스토어 </title>
+
+    <style>
+a:link{text-decoration: none;color: black;}
+a:visited{text-decoration: none;color: black;}
+a:active{text-decoration: none;color: black;}
+a:hover{text-decoration: none;color: black;}
+
+</style>
+    <script src="./toto.js"></script>
+
+    <link rel="stylesheet" href="musinsa/product.css">
+    <link rel="stylesheet" href="../musinsa/product.css">
+
+
+</head>
+<body>
+
+
+<!--영신사 스토어 헤더  -->
+<header id="header_mu">
+    <div id="header_div">
+        <a href="./hhhh" class="no_line" style="color: white;">
+            <b>YOUNGSINSA STORE</b></a>
+        <!--        <input type="text" size="23px" class="hidden_text2">-->
+    </div>
+    <div id="header_div2">
+        <ul>
+            <li style="color: blue;">주말특가</li>
+            <li style="color: purple;">아우터</li>
+            <li style="color: red;">#SELF_LOVE</li>
+            <li>랭킹</li>
+            <li>업데이트</li>
+            <li>코디</li>
+            <li>세일</li>
+            <li>스페셜</li>
+            <li>이벤트</li>
+            <li>브랜드</li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</header>
+
+
+<div>
+    <ul id="rest">
+        <a href="redirect:/localhost:8080/hhhh/login"><li id="rest_li"  style="padding:15px 0 0 0;"> 로그인</li></a>
+        <a href="/hhhh/menu5.html"><li id="rest_li" style="height: 40px;">장바 <br>구니</li></a>
+        <a href="#header_2"><li id="rest_li" style="padding:15px 0 0 0;"> TOP </li></a>
+    </ul>
+
+</div>
+
+<!--스탠다드 쪽 헤더 -->
+<header id="header_2">
+    <ul>
+        <li>스탠다드</li>
+        <li>테라스샵</li>
+        <li>셀렉트</li>
+    </ul>
+
+</header>
+
+<!--개인정보 헤더 -->
+<header id="header_3">
+    <ul>
+        <li>
+            <a href="/hhhh/login" class="no_line" style="color: black;" th:if="${session.userID==null}" th:text="'로그인'">
+                로그인</a>
+            <a href="/hhhh/login" class="no_line" style="color: black;" th:unless="${session.userID==null}" th:text="${session.userID}">
+                로그인</a>
+        </li>
+        <li class="sky" >
+            <a href="/hhhh/login" class="no_line" style="color: rgb(23, 177, 238);" th:if="${session.userID==null}" th:text="'바로접속 off'">
+                바로접속</a>
+            <a href="/hhhh/login" class="no_line"  style="color: rgb(23, 177, 238);" th:unless="${session.userID==null}" th:text="'바로접속 on'">
+                바로접속</a>
+        </li>
+        <li><a href="./hhhh/myPage"> 마이페이지</a></li>
+        <li><a href="./hhhh/cart">장바구니</a></li>
+        <li><a href="./hhhh/orderSearch"> 주문배송조회</a></li>
+        <li><a href="./hhhh/costomer"> 고객센터 </a></li>
+        <li><a href="./hhhh/logout">로그아웃</a></li>
+
+    </ul>
+</header>
+
+
+
+
+<!-- 왼쪽 목차 -->
+<aside id="aside_a">
+    <nav id="navbar">
+        <ul class="navbar_menu" style="list-style: none;">
+            <a href="./hhhh/category/bset">
+                <li class="aside_li">인기<span class="aside_small">&nbsp; Best</span></li>
+            </a>
+            <a href="./hhhh/category/top">
+                <li class="aside_li">상의 <span class="aside_small">&nbsp; Top</span></li>
+            </a>
+            <a href="./hhhh/category/outer">
+                <li class="aside_li">아우터<span class="aside_small">&nbsp; Outer</span></li>
+            </a>
+            <a href="./hhhh/category/bottom">
+                <li class="aside_li">바지<span class="aside_small">&nbsp; Pants</span></li>
+            </a>
+            <a href="./hhhh/category/onepiece">
+                <li class="aside_li">원피스<span class="aside_small">&nbsp; Onepiece</span></li>
+            </a>
+            <a href="./hhhh/category/skirt">
+                <li class="aside_li">스커트<span class="aside_small">&nbsp; Skirt</span></li>
+            </a>
+            <a href="./hhhh/category/sneakers">
+                <li class="aside_li">스니커즈<span class="aside_small">&nbsp; Sneakers</span></li>
+            </a>
+            <a href="./hhhh/category/shoes">
+                <li class="aside_li">신발<span class="aside_small">&nbsp; Shoes</span></li>
+            </a>
+            <a href="./hhhh/category/bag">
+                <li class="aside_li">가방<span class="aside_small">&nbsp; Bag</span></li>
+            </a>
+            <a href="./hhhh/category/sunglass">
+                <li class="aside_li">선글라스<span class="aside_small">&nbsp; Sunglass</span></li>
+            </a>
+            <a href="./hhhh/category/accessory">
+                <li class="aside_li">액세서리<span class="aside_small">&nbsp; Accessory</span></li>
+            </a>
+            <a href="./hhhh/category/watch">
+                <li class="aside_li">시계<span class="aside_small">&nbsp; Watch</span></li>
+            </a>
+            <a href="./hhhh/category/jewelry">
+                <li class="aside_li">주얼리<span class="aside_small">&nbsp; Jewelry</span></li>
+            </a>
+        </ul>
+        <button class="navbar__toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        </section>
+
+
+        <section id="aside_section_2">
+            <ul>
+                <li>이미지 삽입</li>
+                <li><b>1번 배송 / 교환 / 환불관련</b></li>
+                <li><b>2번 결제 / 회원관련</b></li>
+                <li style="font-size: 15px; color: lightgrey;">오전 9시~오후 6시 운영</li>
+            </ul>
+
+
+        </section>
+</aside>
+
+
+<!-- 메인-->
+<main>
+
+
+
+    <aside id="photo" style="width: 500px;">
+        <img src="../images/style001_big.jpeg"  style="width: 500px;">
+    </aside>
+
+
+    <aside id="info">
+
+        <!--상품정보-->
+        <section id="info_1">
+            <h1 style="font-size: 30px; " ><b>Information</b>
+                <span style="color: lightgray;font-size: 20px;">스타일 정보</span>
+            </h1>
+
+            <ul id="info_left"">
+            <li>브랜드 </li>
+            <li>이름</li>
+            <li>직책/직무</li>
+            <li>키/몸무게</li>
+            <li>조회수</li>
+
+
+            </ul>
+            <ul id="info_right">
+                <li>oryany</li>
+                <li>아이유</li>
+                <li>과장</li>
+                <li>163/48</li>
+                <li>250회</li>
+
+            </ul>
+            <div class="clear"></div>
+        </section>
+
+
+
+
+
+
+        <!--가격정보-->
+        <section id="info_3">
+            <h1 style="font-size: 30px; " ><b>Brand</b>
+                <span style="color: lightgray;font-size: 20px;">브랜드</span>
+            </h1>
+
+            <ul id="info2_left"">
+            <li>Oryany</li>
+            <li>rrrr</li>
+            <li>qwerwqer</li>
+
+
+            </ul>
+
+            <div class="clear"></div>
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+    </aside>
+
+    <div class="clear"></div>
+
+
+</main>
+
+<div id="clear"></div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
