@@ -1,6 +1,7 @@
 package project.youngsinsa.admin.Controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+import project.youngsinsa.admin.Dao.ImageUp;
 import project.youngsinsa.admin.service.AdminService;
 import project.youngsinsa.admin.service.AdminServiceImp;
 import project.youngsinsa.category.domain.Category;
@@ -19,6 +21,8 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class AdminController {
     private AdminService adminService;
+    @Autowired
+    private ImageUp imageUp;
 
     public AdminController(AdminServiceImp adminService) {
         this.adminService = adminService;
@@ -36,10 +40,16 @@ public class AdminController {
         return mv;
     }
     @PostMapping("/upload")
-    public ModelAndView uploadOk(Category category, MultipartHttpServletRequest multipartHttpServletRequest){
-        adminService.insertUpload(category,multipartHttpServletRequest);
+    public ModelAndView uploadOk(Category category, MultipartHttpServletRequest HttpServletRequest){
 
-        return null;
+try {
+    category.setPhoto1(imageUp.parseFileInfo(1,HttpServletRequest));
+}catch (Exception e){
+    e.printStackTrace();
+}
+        adminService.insertUpload(category,HttpServletRequest);
+        ModelAndView mv = new ModelAndView("hhhh/adminUpload");
+        return mv;
     }
 
     @GetMapping("/orderList")
