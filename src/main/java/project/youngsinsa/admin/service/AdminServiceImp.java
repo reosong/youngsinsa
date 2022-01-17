@@ -30,8 +30,7 @@ public class AdminServiceImp implements AdminService{
 
 
             if (category.getForm().equals("top")) {
-                CategoryTop ca = (CategoryTop) category;
-                adminRepository.insertTOP(ca, HttpServletRequest);
+                adminRepository.insertTOP(category, HttpServletRequest);
             } else if (category.getForm().equals("pants")) {
                 CategoryPants ca = (CategoryPants) category;
                 adminRepository.insertPants(ca, HttpServletRequest);

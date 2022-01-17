@@ -16,6 +16,7 @@ import project.youngsinsa.category.domain.Category;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RequestMapping("/admin")
 @Controller
@@ -24,7 +25,8 @@ public class AdminController {
     @Autowired
     private ImageUp imageUp;
 
-    public AdminController(AdminServiceImp adminService) {
+    public AdminController(AdminServiceImp adminService, ImageUp imageUp) {
+        this.imageUp = imageUp;
         this.adminService = adminService;
     }
 
@@ -43,10 +45,20 @@ public class AdminController {
     public ModelAndView uploadOk(Category category, MultipartHttpServletRequest HttpServletRequest){
 
 try {
-    category.setPhoto1(imageUp.parseFileInfo(1,HttpServletRequest));
+    List<String> list = imageUp.parseFileInfo(1,HttpServletRequest);
+    category.setPhoto1(list.get(0));
+    category.setPhoto2(list.get(1));
+    category.setPhoto3(list.get(2));
+    category.setPhoto4(list.get(3));
+    category.setPhoto5(list.get(4));
+    category.setPhoto6(list.get(5));
+    System.out.println(category.getPhoto4());
+    System.out.println(category.getPhoto5());
+
 }catch (Exception e){
     e.printStackTrace();
 }
+        System.out.println(category.getPhoto1());
         adminService.insertUpload(category,HttpServletRequest);
         ModelAndView mv = new ModelAndView("hhhh/adminUpload");
         return mv;

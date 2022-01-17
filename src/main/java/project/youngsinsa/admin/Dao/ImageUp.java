@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -14,17 +15,18 @@ import java.util.List;
 
 @Component
 public class ImageUp {
-    public String parseFileInfo(int boardIdx, MultipartHttpServletRequest multipartHttpServletRequest) throws Exception {
-        if(ObjectUtils.isEmpty(multipartHttpServletRequest)) {
+    public List<String> parseFileInfo(int boardIdx, MultipartHttpServletRequest multipartHttpServletRequest) throws Exception {
+        if (ObjectUtils.isEmpty(multipartHttpServletRequest)) {
             return null;
         }
 
         List<Image> fileList = new ArrayList<>();
+        List<String> sList = new ArrayList<>();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyyMMdd");
         ZonedDateTime current = ZonedDateTime.now();
         String path = "images/" + current.format(format);
         File file = new File(path);
-        if(file.exists() == false) {
+        if (file.exists() == false) {
             file.mkdirs();
         }
 
@@ -32,32 +34,26 @@ public class ImageUp {
 
         String newFileName, originalFileExtension, contentType;
 
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             List<MultipartFile> list = multipartHttpServletRequest.getFiles(iterator.next());
-            for(MultipartFile multipartFile : list) {
-                if(multipartFile.isEmpty() == false) {
+            for (MultipartFile multipartFile : list) {
+                if (multipartFile.isEmpty() == false) {
                     contentType = multipartFile.getContentType();
-                    if(ObjectUtils.isEmpty(contentType)) {
+                    if (ObjectUtils.isEmpty(contentType)) {
                         break;
-                    }
-                    else {
-                        if(contentType.contains("image/jpeg")) {
+                    } else {
+                        if (contentType.contains("image/jpeg")) {
                             originalFileExtension = ".jpg";
-                        }
-                        else if(contentType.contains("image/png")) {
+                        } else if (contentType.contains("image/png")) {
                             originalFileExtension = ".png";
-                        }
-                        else if(contentType.contains("image/gif")) {
+                        } else if (contentType.contains("image/gif")) {
                             originalFileExtension = ".gif";
-                        }
-                        else if(contentType.contains("image/jpeg")) {
+                        } else if (contentType.contains("image/jpeg")) {
                             originalFileExtension = ".jpeg";
-                        }
-                        else {
+                        } else {
                             break;
                         }
                     }
-
                     newFileName = Long.toString(System.nanoTime()) + originalFileExtension;
                     Image boardFile = new Image();
                     boardFile.setBoardIdx(boardIdx);
@@ -67,11 +63,15 @@ public class ImageUp {
                     fileList.add(boardFile);
 
                     file = new File(path + "/" + newFileName);
-                    multipartFile.transferTo(file);
+                    FileOutputStream fos = new FileOutputStream(file);
+                    fos.write(10000);
+                    fos.close();
+
+                    sList.add(file.getPath());
                 }
             }
         }
 
-        return file.getPath();
+        return sList;
     }
 }
