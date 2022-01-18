@@ -47,27 +47,32 @@ public class AdminController {
 
 
     @PostMapping("/upload")
-    public ModelAndView uploadOk(CategoryTop categoryTop, MultipartHttpServletRequest HttpServletRequest){
+    public ModelAndView uploadOk(Category category, MultipartHttpServletRequest HttpServletRequest){
 
-try {
-    List<String> list = imageUp.parseFileInfo(1,HttpServletRequest);
-    categoryTop.setPhoto1(list.get(0).substring(25));
-    System.out.println(list.get(0).substring(25));
+//        try {
+//            List<String> list = imageUp.parseFileInfo(1,HttpServletRequest);
+//            category.setPhoto1(list.get(0).substring(25));
+//            System.out.println(list.get(0).substring(25));
+//
+//            category.setPhoto2(list.get(1).substring(25));
+//            category.setPhoto3(list.get(2).substring(25));
+//            category.setPhoto4(list.get(3).substring(25));
+//            category.setPhoto5(list.get(4).substring(25));
+//            category.setPhoto6(list.get(5).substring(25));
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
-    categoryTop.setPhoto2(list.get(1).substring(25));
-    categoryTop.setPhoto3(list.get(2).substring(25));
-    categoryTop.setPhoto4(list.get(3).substring(25));
-    categoryTop.setPhoto5(list.get(4).substring(25));
-    categoryTop.setPhoto6(list.get(5).substring(25));
 
-}catch (Exception e){
-    e.printStackTrace();
-}
-
-        adminService.insertUpload(categoryTop,HttpServletRequest);
+        adminService.insertUpload(category,HttpServletRequest);
         ModelAndView mv = new ModelAndView("hhhh/adminUpload");
         return mv;
     }
+
+
+
+
 
     @GetMapping("/orderList")
     public ModelAndView orderList() {

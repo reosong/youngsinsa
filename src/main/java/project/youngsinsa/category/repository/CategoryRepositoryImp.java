@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import project.youngsinsa.category.domain.Category;
 import project.youngsinsa.category.domain.Comment;
-import project.youngsinsa.category.domain.Style;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -20,12 +19,6 @@ public class CategoryRepositoryImp implements CategoryRepository {
     }
 
 
-    //카테고리 화면
-    public List<Category> showList(Category category) {
-        return em.createQuery("select c from CategoryTop c order by likeNum desc ")
-                .getResultList();
-
-    }
 
     //상품 상세페이지
     @Override
@@ -35,19 +28,7 @@ public class CategoryRepositoryImp implements CategoryRepository {
                 .getSingleResult();
 
     }
-//
-//    @Override
-//    public String getDate() {
-//        return null;
-//    }
 
-    //현재시간 가져오기
-//    @Override
-//    public String getDate() {
-//
-//        String date = (String) em.createQuery("select n from now()").getSingleResult();
-//        return date;
-//    }
 
     //댓글 쓰기
     @Override
@@ -75,12 +56,72 @@ public class CategoryRepositoryImp implements CategoryRepository {
 
     }
 
-    //스타일 불러오기
+
+
+
+
+
+
+
+
+
+
+
+    //카테고리 화면
+    @Override
+    public List<Category> showList(Category category) {
+
+        if(category.getForm().equals("top")) {
+            return em.createQuery("select c from CategoryTop c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("pants")) {
+            return em.createQuery("select c from CategoryPants c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("outer")) {
+            return em.createQuery("select c from CategoryOuter c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("onepiece")) {
+            return em.createQuery("select c from CategoryOnepiece c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("skirt")) {
+            return em.createQuery("select c from CategorySkirt c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("sneakers")) {
+            return em.createQuery("select c from CategorySneakers c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("shoes")) {
+            return em.createQuery("select c from CategoryShoes c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("bag")) {
+            return em.createQuery("select c from CategoryBag c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("sunglass")) {
+            return em.createQuery("select c from CategorySunglass c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("accessory")) {
+            return em.createQuery("select c from CategoryAccessory c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("watch")) {
+            return em.createQuery("select c from CategoryWatch c order by likeNum desc ")
+                    .getResultList();
+        }else if (category.getForm().equals("jewelry")) {
+            return em.createQuery("select c from CategoryJewelry c order by likeNum desc ")
+                    .getResultList();
+        }
+
+        return  null;
+    }
+
+
+
+
+
+//    //카테고리 화면 pants
 //    @Override
-//    public List<Style> loadStyle() {
-//        List<Style> list = em.createQuery("select s from Style s order by likeNum desc")
+//    public List<Category> showPantsList(Category category) {
+//        return em.createQuery("select c from CategoryPants c order by likeNum desc ")
 //                .getResultList();
-//        return list;
+//
 //    }
 
 

@@ -4,6 +4,7 @@ package project.youngsinsa.category.repository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import project.youngsinsa.category.domain.Category;
+import project.youngsinsa.category.domain.CategoryPants;
 import project.youngsinsa.category.domain.Comment;
 import project.youngsinsa.category.domain.Style;
 
@@ -17,8 +18,8 @@ public interface CategoryRepository {
 
 
 
-    //현재시간 가져오기
-//    String getDate();
+
+//    List<Category> showPantsList(Category category);
 
     //상품 상세페이지
     Category showOne(String modelNum);
@@ -32,6 +33,8 @@ public interface CategoryRepository {
 
     //댓글 불러오기
     List<Comment> loadComment(String modelNum);
+
+
 
     //스타일 불러오기
 //    List<Style> loadStyle();

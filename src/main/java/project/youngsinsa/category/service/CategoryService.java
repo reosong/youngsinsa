@@ -12,7 +12,10 @@ import java.util.List;
 public interface CategoryService {
     List<Category> showTopList(Category category);
 
-    List<Category> showTopList();
+    List<Category> showList(Category category);
+
+    //pants 상품리스트 불러오기
+//    List<Category> showPantsList();
 
     Category showOne(String modelNum);
 

@@ -10,6 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 @Service
 public interface AdminService {
     //상품업로드
-    void insertUpload(CategoryTop category, MultipartHttpServletRequest HttpServletRequest) ;
+    void insertUpload(Category category, MultipartHttpServletRequest HttpServletRequest) ;
 
 }

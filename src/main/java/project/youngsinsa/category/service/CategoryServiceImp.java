@@ -4,9 +4,9 @@ package project.youngsinsa.category.service;
 import org.springframework.stereotype.Service;
 import project.youngsinsa.category.Dao.CategoryDao;
 import project.youngsinsa.category.domain.Category;
+import project.youngsinsa.category.domain.CategoryPants;
 import project.youngsinsa.category.domain.CategoryTop;
 import project.youngsinsa.category.domain.Comment;
-import project.youngsinsa.category.domain.Style;
 import project.youngsinsa.category.repository.CategoryRepository;
 
 import java.time.LocalDateTime;
@@ -31,12 +31,13 @@ public class CategoryServiceImp implements CategoryService{
 
     //top 상품리스트 불러오기
     @Override
-    public List<Category> showTopList(){
-        CategoryTop ct = new CategoryTop();
+    public List<Category> showList(Category category){
 
-        return categoryRepository.showList(ct);
+
+        return categoryRepository.showList(category);
 
     }
+
     //상세페이지보기
     @Override
     public Category showOne(String modelNum) {
