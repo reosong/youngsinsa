@@ -51,12 +51,14 @@ public class AdminController {
 
 try {
     List<String> list = imageUp.parseFileInfo(1,HttpServletRequest);
-    categoryTop.setPhoto1(list.get(0));
-    categoryTop.setPhoto2(list.get(1));
-    categoryTop.setPhoto3(list.get(2));
-    categoryTop.setPhoto4(list.get(3));
-    categoryTop.setPhoto5(list.get(4));
-    categoryTop.setPhoto6(list.get(5));
+    categoryTop.setPhoto1(list.get(0).substring(25));
+    System.out.println(list.get(0).substring(25));
+
+    categoryTop.setPhoto2(list.get(1).substring(25));
+    categoryTop.setPhoto3(list.get(2).substring(25));
+    categoryTop.setPhoto4(list.get(3).substring(25));
+    categoryTop.setPhoto5(list.get(4).substring(25));
+    categoryTop.setPhoto6(list.get(5).substring(25));
 
 }catch (Exception e){
     e.printStackTrace();

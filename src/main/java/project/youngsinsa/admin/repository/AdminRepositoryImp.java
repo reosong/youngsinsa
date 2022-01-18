@@ -30,8 +30,8 @@ public class AdminRepositoryImp implements AdminRepository{
         String num = (categoryTops.get(0).getModelNum()).substring(3);
         int modelNum = Integer.parseInt(num) +1 ;
         categoryTop.setModelNum("top"+modelNum);
-        categoryTop.setModelNum("top4");
-        System.out.println("1111");
+//        categoryTop.setModelNum("top4");
+
         em.persist(categoryTop);
     }
 

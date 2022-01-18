@@ -189,12 +189,18 @@ display: inline-block;
 
 
 }
+.img{
+text-align:center;
+width:40%;
+height:100px;
+
+}
 .product_li1{
 
    width: 100%;
    text-align: center;
    margin-top: 40px;
-   font-size: 20px;
+   font-size: 15px;
    font-weight: bolder;
 }
 .product_li2{
