@@ -24,7 +24,7 @@ public class ImageUp {
         List<String> sList = new ArrayList<>();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyyMMdd");
         ZonedDateTime current = ZonedDateTime.now();
-        String path = "images/" + current.format(format);
+        String path = "src/main/resources/static/images/" + current.format(format);
         File file = new File(path);
         if (file.exists() == false) {
             file.mkdirs();
@@ -42,7 +42,7 @@ public class ImageUp {
                     if (ObjectUtils.isEmpty(contentType)) {
                         break;
                     } else {
-                        if (contentType.contains("image/jpeg")) {
+                        if (contentType.contains("image/jpg")) {
                             originalFileExtension = ".jpg";
                         } else if (contentType.contains("image/png")) {
                             originalFileExtension = ".png";
@@ -64,10 +64,11 @@ public class ImageUp {
 
                     file = new File(path + "/" + newFileName);
                     FileOutputStream fos = new FileOutputStream(file);
-                    fos.write(10000);
-                    fos.close();
+
+                    multipartFile.transferTo(file);
 
                     sList.add(file.getPath());
+
                 }
             }
         }

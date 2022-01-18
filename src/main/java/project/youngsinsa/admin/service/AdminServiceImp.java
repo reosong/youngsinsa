@@ -23,46 +23,44 @@ public class AdminServiceImp implements AdminService{
 
     //상품업로드
     @Override
-    public void insertUpload(Category category, MultipartHttpServletRequest HttpServletRequest) {
+    public void insertUpload(CategoryTop categoryTop, MultipartHttpServletRequest HttpServletRequest) {
 
-        try {
+//        try {
+
+            if (categoryTop.getForm().equals("top")) {
+                adminRepository.insertTOP(categoryTop, HttpServletRequest);
+//            } else if (category.getForm().equals("pants")) {
+//                CategoryPants ca = (CategoryPants) category;
+//                adminRepository.insertPants(ca, HttpServletRequest);
+//            } else if (category.getForm().equals("outer")) {
+//                CategoryOuter ca = (CategoryOuter) category;
+//                adminRepository.insertOuter(ca, HttpServletRequest);
+//            } else if (category.getForm().equals("onepiece")) {
+//                CategoryOnepiece ca = (CategoryOnepiece) category;
+//                adminRepository.insertOnepiece(ca, HttpServletRequest);
+//            } else if (category.getForm().equals("sunglass")) {
+//                CategorySunglass ca = (CategorySunglass) category;
+//                adminRepository.insertSunglass(ca, HttpServletRequest);
+//            } else if (category.getForm().equals("bag")) {
+//                CategoryBag ca = (CategoryBag) category;
+//                adminRepository.insertBag(ca, HttpServletRequest);
+//            } else if (category.getForm().equals("accessory")) {
+//                CategoryAccessory ca = (CategoryAccessory) category;
+//                adminRepository.insertAccessory(ca, HttpServletRequest);
+//            } else if (category.getForm().equals("watch")) {
+//                CategoryWatch ca = (CategoryWatch) category;
+//                adminRepository.insertWatch(ca, HttpServletRequest);
+//            } else if (category.getForm().equals("jewelry")) {
+//                CategoryJewelry ca = (CategoryJewelry) category;
+//                adminRepository.insertJewelry(ca, HttpServletRequest);
+//            }
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
 
 
-
-            if (category.getForm().equals("top")) {
-                adminRepository.insertTOP(category, HttpServletRequest);
-            } else if (category.getForm().equals("pants")) {
-                CategoryPants ca = (CategoryPants) category;
-                adminRepository.insertPants(ca, HttpServletRequest);
-            } else if (category.getForm().equals("outer")) {
-                CategoryOuter ca = (CategoryOuter) category;
-                adminRepository.insertOuter(ca, HttpServletRequest);
-            } else if (category.getForm().equals("onepiece")) {
-                CategoryOnepiece ca = (CategoryOnepiece) category;
-                adminRepository.insertOnepiece(ca, HttpServletRequest);
-            } else if (category.getForm().equals("sunglass")) {
-                CategorySunglass ca = (CategorySunglass) category;
-                adminRepository.insertSunglass(ca, HttpServletRequest);
-            } else if (category.getForm().equals("bag")) {
-                CategoryBag ca = (CategoryBag) category;
-                adminRepository.insertBag(ca, HttpServletRequest);
-            } else if (category.getForm().equals("accessory")) {
-                CategoryAccessory ca = (CategoryAccessory) category;
-                adminRepository.insertAccessory(ca, HttpServletRequest);
-            } else if (category.getForm().equals("watch")) {
-                CategoryWatch ca = (CategoryWatch) category;
-                adminRepository.insertWatch(ca, HttpServletRequest);
-            } else if (category.getForm().equals("jewelry")) {
-                CategoryJewelry ca = (CategoryJewelry) category;
-                adminRepository.insertJewelry(ca, HttpServletRequest);
             }
-        }catch(Exception e){
-            e.printStackTrace();
-        }
 
 
         }
-
-
-
-}
+    }

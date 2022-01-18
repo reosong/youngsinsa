@@ -13,6 +13,7 @@ import project.youngsinsa.admin.Dao.ImageUp;
 import project.youngsinsa.admin.service.AdminService;
 import project.youngsinsa.admin.service.AdminServiceImp;
 import project.youngsinsa.category.domain.Category;
+import project.youngsinsa.category.domain.CategoryTop;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -41,25 +42,27 @@ public class AdminController {
         ModelAndView mv = new ModelAndView("hhhh/adminUpload");
         return mv;
     }
+
+
+
+
     @PostMapping("/upload")
-    public ModelAndView uploadOk(Category category, MultipartHttpServletRequest HttpServletRequest){
+    public ModelAndView uploadOk(CategoryTop categoryTop, MultipartHttpServletRequest HttpServletRequest){
 
 try {
     List<String> list = imageUp.parseFileInfo(1,HttpServletRequest);
-    category.setPhoto1(list.get(0));
-    category.setPhoto2(list.get(1));
-    category.setPhoto3(list.get(2));
-    category.setPhoto4(list.get(3));
-    category.setPhoto5(list.get(4));
-    category.setPhoto6(list.get(5));
-    System.out.println(category.getPhoto4());
-    System.out.println(category.getPhoto5());
+    categoryTop.setPhoto1(list.get(0));
+    categoryTop.setPhoto2(list.get(1));
+    categoryTop.setPhoto3(list.get(2));
+    categoryTop.setPhoto4(list.get(3));
+    categoryTop.setPhoto5(list.get(4));
+    categoryTop.setPhoto6(list.get(5));
 
 }catch (Exception e){
     e.printStackTrace();
 }
-        System.out.println(category.getPhoto1());
-        adminService.insertUpload(category,HttpServletRequest);
+
+        adminService.insertUpload(categoryTop,HttpServletRequest);
         ModelAndView mv = new ModelAndView("hhhh/adminUpload");
         return mv;
     }

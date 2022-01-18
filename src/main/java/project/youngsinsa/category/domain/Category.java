@@ -3,15 +3,19 @@ package project.youngsinsa.category.domain;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 
 @Getter
 @Setter
+
 public class Category {
 
 
         //
         private String form;
+        @Id
         private String modelNum;
         private String modelName;
         private String modelBrand;

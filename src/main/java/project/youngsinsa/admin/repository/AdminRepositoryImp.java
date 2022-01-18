@@ -23,14 +23,16 @@ public class AdminRepositoryImp implements AdminRepository{
 
     @Override
     @Transactional
-    public void insertTOP(Category category, HttpServletRequest HttpServletRequest) {
+    public void insertTOP(CategoryTop categoryTop, HttpServletRequest HttpServletRequest) {
 
         List<CategoryTop> categoryTops = em.createQuery("select m from CategoryTop m order by length(modelNum) desc, modelNum desc", CategoryTop.class)
                 .getResultList();
-        String num = (categoryTops.get(0).getModelNum()).substring(4);
+        String num = (categoryTops.get(0).getModelNum()).substring(3);
         int modelNum = Integer.parseInt(num) +1 ;
-        category.setModelNum("top"+modelNum);
-        em.persist(category);
+        categoryTop.setModelNum("top"+modelNum);
+        categoryTop.setModelNum("top4");
+        System.out.println("1111");
+        em.persist(categoryTop);
     }
 
 
