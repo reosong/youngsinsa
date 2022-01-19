@@ -43,18 +43,18 @@ public class ProductControllerBag {
         String num = request.getParameter("modelNum");
         String category = "bag";
         Category product = categoryService.showOne(num,category);
-//        List<Comment> com = categoryRepository.loadComment(num);
+     List<Comment> com = categoryRepository.loadComment(num);
 
         ModelAndView mv = new ModelAndView("hhhh/product");
         mv.addObject("product", product);
-//        mv.addObject("comment",com);
+      mv.addObject("comment",com);
         return mv;
     }
 
 
 
     //댓글쓰기
-    @PostMapping("/topNum")
+    @PostMapping("/Num")
     public ModelAndView writeComment(HttpServletRequest request, Comment comment) {
 
         if (request.getSession().getAttribute("userID") != null) {

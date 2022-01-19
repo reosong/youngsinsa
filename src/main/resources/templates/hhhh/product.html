@@ -315,7 +315,7 @@
         </div>
 
         <div style="margin-top:30px;">
-            <form  th:action="|/hhhh/category/top/topNum?modelNum=${product.modelNum}|" method="post">
+            <form th:action="@{|/hhhh/category/${product.form}/Num?modelNum=${product.modelNum}|}" method="post">
                 <input type="hidden" value="" th:value="${session.userID}" name="userID">
                 <ul style="width: 100%; list-style: none;">
                     <li style="width: 100%; list-style: none;">
