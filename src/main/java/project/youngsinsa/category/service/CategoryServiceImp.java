@@ -4,8 +4,6 @@ package project.youngsinsa.category.service;
 import org.springframework.stereotype.Service;
 import project.youngsinsa.category.Dao.CategoryDao;
 import project.youngsinsa.category.domain.Category;
-import project.youngsinsa.category.domain.CategoryPants;
-import project.youngsinsa.category.domain.CategoryTop;
 import project.youngsinsa.category.domain.Comment;
 import project.youngsinsa.category.repository.CategoryRepository;
 
@@ -40,9 +38,37 @@ public class CategoryServiceImp implements CategoryService{
 
     //상세페이지보기
     @Override
-    public Category showOne(String modelNum) {
-        return categoryRepository.showOne(modelNum);
+    public Category showOne(String modelNum,String category) {
+        if(category=="top") {
+            return categoryRepository.showOne(modelNum);
+        }else if(category=="pants"){
+            return categoryRepository.showPants(modelNum);
+        }else if(category=="accessory"){
+            return categoryRepository.showAccessory(modelNum);
+        }else if(category=="bag"){
+            return categoryRepository.showBag(modelNum);
+        }else if(category=="onepiece"){
+            return categoryRepository.showOnepiece(modelNum);
+        }else if(category=="jewelry"){
+            return categoryRepository.showJewelry(modelNum);
+        }else if(category=="outer"){
+            return categoryRepository.showOuter(modelNum);
+        }else if(category=="shoes"){
+            return categoryRepository.showShoes(modelNum);
+        }else if(category=="skirt"){
+            return categoryRepository.showSkirt(modelNum);
+        }else if(category=="sneakers"){
+            return categoryRepository.showSneakers(modelNum);
+        }else if(category=="sunglass"){
+            return categoryRepository.showSneakers(modelNum);
+        }else if(category=="watch"){
+            return categoryRepository.showWatch(modelNum);
+        }
+        return null;
     }
+
+
+    //if로 나눠서 뿌려주기
 
 
     //댓글쓰기

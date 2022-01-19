@@ -149,7 +149,7 @@
 
       <li class="section1_li" >
         <ul class="product" >
-          <a href="" th:href="@{./top/topNum?modelNum={name}(name=${list.get(0).modelNum})}">
+          <a href="" th:href="@{|${list.get(0).form}/Num?modelNum=${list.get(0).modelNum}|}">
             <div style="text-align: center;"><img th:src="${list.get(0).photo1}" ></div>
             <li class="product_li1" th:text="${list.get(0).modelName}">상의 1</li>
             <li class="product_li2" th:text="${list.get(0).modelBrand}"> 무신사 </li>
@@ -158,9 +158,10 @@
         </ul>
       </li>
 
+
       <li class="section1_li" >
         <ul class="product" >
-          <a href="" th:href="@{./top/topNum?modelNum={name}(name=${list.get(1).modelNum})}">
+          <a href="" th:href="@{|${list.get(1).form}/Num?modelNum=${list.get(1).modelNum}|}">
             <div style="text-align: center;"><img th:src="${list.get(1).photo1}" ></div>
             <li class="product_li1" th:text="${list.get(1).modelName}">상의 1</li>
             <li class="product_li2" th:text="${list.get(1).modelBrand}"> 무신사 </li>
@@ -208,6 +209,8 @@
 
 
     </ul>
+
+
 <!--    <div style="width: 100%; height: 50px;"></div>-->
 <!--    <ul>-->
 <!--      <li class="section1_li" >-->

@@ -19,15 +19,15 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-@RequestMapping("/hhhh/category/top")
-public class ProductController {
+@RequestMapping("/hhhh/category/pants")
+public class ProductControllerPants {
 
     private CategoryRepository categoryRepository;
     private CategoryService categoryService;
     private SessionManager sessionManager;
 
 
-    public ProductController(CategoryServiceImp categoryServiceImp
+    public ProductControllerPants(CategoryServiceImp categoryServiceImp
             , SessionManager sessionManager, CategoryRepositoryImp categoryRepository) {
         this.categoryRepository= categoryRepository;
         this.categoryService = categoryServiceImp;
@@ -41,13 +41,13 @@ public class ProductController {
     public ModelAndView showOne(HttpServletRequest request, Model model) {
 
         String num = request.getParameter("modelNum");
-        String category = "top";
+        String category = "pants";
         Category product = categoryService.showOne(num,category);
-        List<Comment> com = categoryRepository.loadComment(num);
+//        List<Comment> com = categoryRepository.loadComment(num);
 
         ModelAndView mv = new ModelAndView("hhhh/product");
         mv.addObject("product", product);
-        mv.addObject("comment",com);
+//        mv.addObject("comment",com);
         return mv;
     }
 
@@ -65,7 +65,7 @@ public class ProductController {
             categoryService.writeComment(comment);
             ModelAndView mv = new ModelAndView("hhhh/product");
             String num = request.getParameter("modelNum");
-            String category = "top";
+            String category ="pants";
             Category product = categoryService.showOne(num,category);
             List<Comment> com = categoryRepository.loadComment(num);
             mv.addObject("product", product);

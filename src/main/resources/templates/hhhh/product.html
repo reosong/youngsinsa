@@ -83,43 +83,41 @@
 <aside id="aside_a">
     <section>
         <ul class="navbar_menu" style="list-style: none;">
-            <a href="./hhhh/category/bset">
-                <li class="aside_li">인기<span class="aside_small">&nbsp; Best</span></li>
-            </a>
-            <a href="./hhhh/category/top">
+
+            <a href="/hhhh/category/top">
                 <li class="aside_li">상의 <span class="aside_small">&nbsp; Top</span></li>
             </a>
-            <a href="./hhhh/category/outer">
+            <a href="/hhhh/category/outer">
                 <li class="aside_li">아우터<span class="aside_small">&nbsp; Outer</span></li>
             </a>
-            <a href="./hhhh/category/bottom">
+            <a href="/hhhh/category/pants">
                 <li class="aside_li">바지<span class="aside_small">&nbsp; Pants</span></li>
             </a>
-            <a href="./hhhh/category/onepiece">
+            <a href="/hhhh/category/onepiece">
                 <li class="aside_li">원피스<span class="aside_small">&nbsp; Onepiece</span></li>
             </a>
-            <a href="./hhhh/category/skirt">
+            <a href="/hhhh/category/skirt">
                 <li class="aside_li">스커트<span class="aside_small">&nbsp; Skirt</span></li>
             </a>
-            <a href="./hhhh/category/sneakers">
+            <a href="/hhhh/category/sneakers">
                 <li class="aside_li">스니커즈<span class="aside_small">&nbsp; Sneakers</span></li>
             </a>
-            <a href="./hhhh/category/shoes">
+            <a href="/hhhh/category/shoes">
                 <li class="aside_li">신발<span class="aside_small">&nbsp; Shoes</span></li>
             </a>
-            <a href="./hhhh/category/bag">
+            <a href="/hhhh/category/bag">
                 <li class="aside_li">가방<span class="aside_small">&nbsp; Bag</span></li>
             </a>
-            <a href="./hhhh/category/sunglass">
+            <a href="/hhhh/category/sunglass">
                 <li class="aside_li">선글라스<span class="aside_small">&nbsp; Sunglass</span></li>
             </a>
-            <a href="./hhhh/category/accessory">
+            <a href="/hhhh/category/accessory">
                 <li class="aside_li">액세서리<span class="aside_small">&nbsp; Accessory</span></li>
             </a>
-            <a href="./hhhh/category/watch">
+            <a href="/hhhh/category/watch">
                 <li class="aside_li">시계<span class="aside_small">&nbsp; Watch</span></li>
             </a>
-            <a href="./hhhh/category/jewelry">
+            <a href="/hhhh/category/jewelry">
                 <li class="aside_li">주얼리<span class="aside_small">&nbsp; Jewelry</span></li>
             </a>
         </ul>
@@ -238,15 +236,15 @@
         <section id="info_2">
 
             <div id="location" >
-                <form action="" class="subbox">
+                <form action="a" class="subbox">
                     <input type="hidden">
                     <input type="submit" value="구매하기" id="buy">
                 </form>
-                <form action="" class="subbox">
+                <form action="s" class="subbox">
                     <input type="hidden">
                     <input type="submit" value="장바구니" id="chart">
                 </form>
-                <form action="" class="subbox">
+                <form action="d" class="subbox">
                     <input type="hidden">
                     <input type="submit" value="좋아요" id="likePlus">
                 </form>
@@ -317,7 +315,7 @@
         </div>
 
         <div style="margin-top:30px;">
-            <form action="" th:action="|/hhhh/category/top/topNum?modelNum=${product.modelNum}|" method="post">
+            <form  th:action="|/hhhh/category/top/topNum?modelNum=${product.modelNum}|" method="post">
                 <input type="hidden" value="" th:value="${session.userID}" name="userID">
                 <ul style="width: 100%; list-style: none;">
                     <li style="width: 100%; list-style: none;">

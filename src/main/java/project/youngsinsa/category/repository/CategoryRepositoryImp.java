@@ -28,7 +28,90 @@ public class CategoryRepositoryImp implements CategoryRepository {
                 .getSingleResult();
 
     }
+    //상품 상세페이지
+    @Override
+    public Category showPants(String modelNum) {
+        return (Category) em.createQuery("select c from CategoryPants c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
 
+    //outer 상품 상세페이지
+    @Override
+    public Category showOuter(String modelNum) {
+        return (Category) em.createQuery("select c from CategoryOuter c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
+    //Accessory 상품 상세페이지
+    @Override
+    public Category showAccessory(String modelNum) {
+        return (Category) em.createQuery("select c from CategoryAccessory c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
+
+    //Bag 상품 상세페이지
+    @Override
+    public Category showBag(String modelNum) {
+        return (Category) em.createQuery("select c from CategoryBag c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
+
+
+    //Jewelry 상품 상세페이지
+    @Override
+    public Category showJewelry(String modelNum) {
+        return (Category) em.createQuery("select c from CategoryJewelry c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
+
+    //onpiece 상품 상세페이지
+    @Override
+    public Category showOnepiece(String modelNum) {
+        return (Category) em.createQuery("select c from CategoryOnepiece c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
+    //shoes 상품 상세페이지
+    @Override
+    public Category showShoes(String modelNum) {
+        return (Category) em.createQuery("select c from CategoryShoes c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
+
+    //skirt 상품 상세페이지
+    @Override
+    public Category showSkirt(String modelNum) {
+        return (Category) em.createQuery("select c from CategorySkirt c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
+    //sneakers 상품 상세페이지
+    @Override
+    public Category showSneakers(String modelNum) {
+        return (Category) em.createQuery("select c from CategorySneakers c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
+
+    //sunglass 상품 상세페이지
+    @Override
+    public Category showSunglass(String modelNum) {
+        return (Category) em.createQuery("select c from CategorySunglass c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
+    //whach 상품 상세페이지
+    @Override
+    public Category showWatch(String modelNum) {
+        return (Category) em.createQuery("select c from CategoryWatch c where modelNum = : modelNum")
+                .setParameter("modelNum", modelNum)
+                .getSingleResult();
+    }
 
     //댓글 쓰기
     @Override

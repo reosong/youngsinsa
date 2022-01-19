@@ -24,6 +24,39 @@ public interface CategoryRepository {
     //상품 상세페이지
     Category showOne(String modelNum);
 
+    //상품 상세페이지
+    Category showPants(String modelNum);
+
+    //outer 상품 상세페이지
+    Category showOuter(String modelNum);
+
+    //Accessory 상품 상세페이지
+    Category showAccessory(String modelNum);
+
+    //Bag 상품 상세페이지
+    Category showBag(String modelNum);
+
+    //Jewelry 상품 상세페이지
+    Category showJewelry(String modelNum);
+
+    //onpiece 상품 상세페이지
+    Category showOnepiece(String modelNum);
+
+    //shoes 상품 상세페이지
+    Category showShoes(String modelNum);
+
+    //skirt 상품 상세페이지
+    Category showSkirt(String modelNum);
+
+    //sneakers 상품 상세페이지
+    Category showSneakers(String modelNum);
+
+    //sunglass 상품 상세페이지
+    Category showSunglass(String modelNum);
+
+    //whach 상품 상세페이지
+    Category showWatch(String modelNum);
+
     //댓글 쓰기
     void writeComment(Comment comment);
 

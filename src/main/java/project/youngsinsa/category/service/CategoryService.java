@@ -17,7 +17,8 @@ public interface CategoryService {
     //pants 상품리스트 불러오기
 //    List<Category> showPantsList();
 
-    Category showOne(String modelNum);
+    Category showOne(String modelNum,String category);
+
 
     Comment writeComment(Comment comment);
 
