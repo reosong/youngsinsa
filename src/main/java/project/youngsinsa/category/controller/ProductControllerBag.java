@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import project.youngsinsa.category.domain.Category;
 import project.youngsinsa.category.domain.Comment;
@@ -80,7 +81,14 @@ public class ProductControllerBag {
 
 
 
-
+// 좋아요
+    @GetMapping("/like")
+    public ModelAndView likeUp(HttpServletRequest request){
+        String num = request.getParameter("modelNum");
+        String url ="redirect:/hhhh/category/bag/Num?modelNum="+num;
+        ModelAndView mv = new ModelAndView(url);
+        return mv;
+    }
 
 
 
