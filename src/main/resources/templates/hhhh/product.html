@@ -240,13 +240,16 @@
                     <input type="hidden">
                     <input type="submit" value="구매하기" id="buy">
                 </form>
-                <form action="s" class="subbox">
-                    <input type="hidden">
+                <form action="#" th:action="@{./order?modelNum=${product.modelNum}}" class="subbox">
+                    <input type="hidden" name="userID" th:value="${session.userID}">
+                    <input type="hidden" name="modelNum" th:value="${product.modelNum}">
                     <input type="submit" value="장바구니" id="chart">
                 </form>
                 <form action="#" th:action="@{./like?modelNum=${product.modelNum}}" class="subbox">
+                    <input type="hidden" name="form" th:value="${product.form}">
                     <input type="hidden" name="modelNum" th:value="${product.modelNum}">
                     <input type="submit" value="좋아요" id="likePlus">
+
                 </form>
             </div>
 

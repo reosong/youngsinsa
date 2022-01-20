@@ -1,6 +1,7 @@
 package project.youngsinsa.category.repository;
 
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import project.youngsinsa.category.domain.Category;
@@ -22,95 +23,154 @@ public class CategoryRepositoryImp implements CategoryRepository {
 
     //상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showOne(String modelNum) {
-        return (Category) em.createQuery("select c from CategoryTop c where modelNum = : modelNum")
+       Category category= (Category) em.createQuery("select c from CategoryTop c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+       return category;
 
     }
     //상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showPants(String modelNum) {
-        return (Category) em.createQuery("select c from CategoryPants c where modelNum = : modelNum")
+        Category category=  (Category) em.createQuery("select c from CategoryPants c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
 
     //outer 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showOuter(String modelNum) {
-        return (Category) em.createQuery("select c from CategoryOuter c where modelNum = : modelNum")
+        Category category= (Category) em.createQuery("select c from CategoryOuter c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
     //Accessory 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showAccessory(String modelNum) {
-        return (Category) em.createQuery("select c from CategoryAccessory c where modelNum = : modelNum")
+        Category category=  (Category) em.createQuery("select c from CategoryAccessory c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
 
     //Bag 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showBag(String modelNum) {
-        return (Category) em.createQuery("select c from CategoryBag c where modelNum = : modelNum")
+        Category category=  (Category) em.createQuery("select c from CategoryBag c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
 
 
     //Jewelry 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showJewelry(String modelNum) {
-        return (Category) em.createQuery("select c from CategoryJewelry c where modelNum = : modelNum")
+        Category category=  (Category) em.createQuery("select c from CategoryJewelry c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
 
     //onpiece 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showOnepiece(String modelNum) {
-        return (Category) em.createQuery("select c from CategoryOnepiece c where modelNum = : modelNum")
+        Category category= (Category) em.createQuery("select c from CategoryOnepiece c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
     //shoes 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showShoes(String modelNum) {
-        return (Category) em.createQuery("select c from CategoryShoes c where modelNum = : modelNum")
+        Category category=  (Category) em.createQuery("select c from CategoryShoes c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
 
     //skirt 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showSkirt(String modelNum) {
-        return (Category) em.createQuery("select c from CategorySkirt c where modelNum = : modelNum")
+        Category category= (Category) em.createQuery("select c from CategorySkirt c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
     //sneakers 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showSneakers(String modelNum) {
-        return (Category) em.createQuery("select c from CategorySneakers c where modelNum = : modelNum")
+        Category category=  (Category) em.createQuery("select c from CategorySneakers c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
 
     //sunglass 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showSunglass(String modelNum) {
-        return (Category) em.createQuery("select c from CategorySunglass c where modelNum = : modelNum")
+        Category category= (Category) em.createQuery("select c from CategorySunglass c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
     //whach 상품 상세페이지
     @Override
+    @Modifying
+    @Transactional
     public Category showWatch(String modelNum) {
-        return (Category) em.createQuery("select c from CategoryWatch c where modelNum = : modelNum")
+        Category category= (Category) em.createQuery("select c from CategoryWatch c where modelNum = : modelNum")
                 .setParameter("modelNum", modelNum)
                 .getSingleResult();
+        category.setCountNum(category.getCountNum()+1);
+        return category;
+
     }
 
     //댓글 쓰기

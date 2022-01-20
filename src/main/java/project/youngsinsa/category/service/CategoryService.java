@@ -22,6 +22,8 @@ public interface CategoryService {
 
     Comment writeComment(Comment comment);
 
+    void likeUp(String form, String num);
+
     //스타일 리스트 가져오기
 //    List<Style> loadStyle();
 }

@@ -13,7 +13,13 @@ import project.youngsinsa.category.repository.CategoryRepository;
 import project.youngsinsa.category.repository.CategoryRepositoryImp;
 import project.youngsinsa.category.service.CategoryService;
 import project.youngsinsa.category.service.CategoryServiceImp;
+import project.youngsinsa.member.Service.MemberService;
+import project.youngsinsa.member.Service.MemberServiceImp;
 import project.youngsinsa.member.domain.SessionManager;
+import project.youngsinsa.order.domain.OrderList;
+import project.youngsinsa.order.repository.OrderRepositoryImp;
+import project.youngsinsa.order.service.OrderService;
+import project.youngsinsa.order.service.OrderServiceImp;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -26,15 +32,21 @@ public class ProductControllerBag {
     private CategoryRepository categoryRepository;
     private CategoryService categoryService;
     private SessionManager sessionManager;
+    private OrderService orderService;
+    private MemberService memberService;
+
 
 
     public ProductControllerBag(CategoryServiceImp categoryServiceImp
-            , SessionManager sessionManager, CategoryRepositoryImp categoryRepository) {
-        this.categoryRepository= categoryRepository;
+            , SessionManager sessionManager, CategoryRepositoryImp categoryRepository,
+                                OrderServiceImp orderServiceImp, MemberServiceImp memberServiceImp) {
+        this.categoryRepository = categoryRepository;
         this.categoryService = categoryServiceImp;
         this.sessionManager = sessionManager;
-    }
+        this.orderService =orderServiceImp;
+        this.memberService = memberServiceImp;
 
+    }
 
 
     //top 상품 상세 페이지
@@ -43,15 +55,14 @@ public class ProductControllerBag {
 
         String num = request.getParameter("modelNum");
         String category = "bag";
-        Category product = categoryService.showOne(num,category);
-     List<Comment> com = categoryRepository.loadComment(num);
+        Category product = categoryService.showOne(num, category);
+        List<Comment> com = categoryRepository.loadComment(num);
 
         ModelAndView mv = new ModelAndView("hhhh/product");
         mv.addObject("product", product);
-      mv.addObject("comment",com);
+        mv.addObject("comment", com);
         return mv;
     }
-
 
 
     //댓글쓰기
@@ -66,34 +77,53 @@ public class ProductControllerBag {
             categoryService.writeComment(comment);
             ModelAndView mv = new ModelAndView("hhhh/product");
             String num = request.getParameter("modelNum");
-            String category ="bag";
-            Category product = categoryService.showOne(num,category);
+            String category = "bag";
+            Category product = categoryService.showOne(num, category);
             List<Comment> com = categoryRepository.loadComment(num);
             mv.addObject("product", product);
             mv.addObject("comment", com);
 
             return mv;
-        }else if(request.getSession().getAttribute("userID")==null){
+        } else if (request.getSession().getAttribute("userID") == null) {
             return new ModelAndView("redirect:/localhost:8080/hhhh");
         }
         return new ModelAndView("redirect:/localhost:8080/hhhh");
     }
 
 
-
-// 좋아요
+    // 좋아요
     @GetMapping("/like")
-    public ModelAndView likeUp(HttpServletRequest request){
+    public ModelAndView likeUp(HttpServletRequest request) {
         String num = request.getParameter("modelNum");
-        String url ="redirect:/hhhh/category/bag/Num?modelNum="+num;
+        String url = "redirect:/hhhh/category/bag/Num?modelNum=" + num;
+        String form = request.getParameter("form");
+        categoryService.likeUp(form, num);
         ModelAndView mv = new ModelAndView(url);
         return mv;
     }
 
+    //장바구니
+    @GetMapping("order")
+    public ModelAndView order(HttpServletRequest request) {
+        String uerID = request.getParameter("uerID");
+        String modelNum = request.getParameter("modelNum");
+        String form = "bag";
+        Category category= categoryService.showOne(form,modelNum);
+        int level =memberService.findLevel(uerID);
+        OrderList orderList = new OrderList();
+        orderList.setModelName(modelNum);
+        orderList.setModelName(category.getModelName());
+        orderList.setModelBrand(category.getModelBrand());
+        orderList.setPrice(category.getPrice());
+        orderList.setUserID(uerID);
+        orderList.setUserLevel(level);
+        orderList.setState("yet");
+        orderList.setDelivery("yet");
+        orderService.order(orderList, form);
 
 
+        ModelAndView mv = new ModelAndView("hhhh/order");
+        return mv;
 
-
-
-
+    }
 }

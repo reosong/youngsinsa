@@ -79,7 +79,16 @@ public class ProductControllerWatch {
     }
 
 
-
+    // 좋아요
+    @GetMapping("/like")
+    public ModelAndView likeUp(HttpServletRequest request){
+        String num = request.getParameter("modelNum");
+        String url ="redirect:/hhhh/category/watch/Num?modelNum="+num;
+        String form = request.getParameter("form");
+        categoryService.likeUp(form,num);
+        ModelAndView mv = new ModelAndView(url);
+        return mv;
+    }
 
 
 

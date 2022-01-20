@@ -1,4 +1,10 @@
 package project.youngsinsa.order.controller;
 
-public interface OrderController {
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("/hhhh/order")
+public class OrderController {
+
+
 }
