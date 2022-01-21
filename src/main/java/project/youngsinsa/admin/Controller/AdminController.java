@@ -14,6 +14,9 @@ import project.youngsinsa.admin.service.AdminService;
 import project.youngsinsa.admin.service.AdminServiceImp;
 import project.youngsinsa.category.domain.Category;
 import project.youngsinsa.category.domain.CategoryTop;
+import project.youngsinsa.order.domain.OrderList;
+import project.youngsinsa.order.service.OrderService;
+import project.youngsinsa.order.service.OrderServiceImp;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -22,13 +25,17 @@ import java.util.List;
 @RequestMapping("/admin")
 @Controller
 public class AdminController {
+
+
     private AdminService adminService;
+    private OrderService orderService;
     @Autowired
     private ImageUp imageUp;
 
-    public AdminController(AdminServiceImp adminService, ImageUp imageUp) {
+    public AdminController(AdminServiceImp adminService, ImageUp imageUp, OrderServiceImp orderServiceImp) {
         this.imageUp = imageUp;
         this.adminService = adminService;
+        this.orderService = orderServiceImp;
     }
 
     @GetMapping
@@ -49,20 +56,6 @@ public class AdminController {
     @PostMapping("/upload")
     public ModelAndView uploadOk(Category category, MultipartHttpServletRequest HttpServletRequest){
 
-//        try {
-//            List<String> list = imageUp.parseFileInfo(1,HttpServletRequest);
-//            category.setPhoto1(list.get(0).substring(25));
-//            System.out.println(list.get(0).substring(25));
-//
-//            category.setPhoto2(list.get(1).substring(25));
-//            category.setPhoto3(list.get(2).substring(25));
-//            category.setPhoto4(list.get(3).substring(25));
-//            category.setPhoto5(list.get(4).substring(25));
-//            category.setPhoto6(list.get(5).substring(25));
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
 
 
         adminService.insertUpload(category,HttpServletRequest);
@@ -76,7 +69,9 @@ public class AdminController {
 
     @GetMapping("/orderList")
     public ModelAndView orderList() {
+        List<OrderList> list = orderService.showList();
         ModelAndView mv = new ModelAndView("hhhh/adminOrderList");
+        mv.addObject("order", list);
         return mv;
     }
 

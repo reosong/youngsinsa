@@ -73,11 +73,11 @@
       <a href="/hhhh/login" class="no_line"  style="color: rgb(23, 177, 238);" th:unless="${session.userID==null}" th:text="'바로접속 on'">
         바로접속</a>
     </li>
-    <li><a href="./hhhh/myPage"> 마이페이지</a></li>
-    <li><a href="./hhhh/cart">장바구니</a></li>
-    <li><a href="./hhhh/orderSearch"> 주문배송조회</a></li>
-    <li><a href="./hhhh/costomer"> 고객센터 </a></li>
-    <li><a href="./hhhh/logout">로그아웃</a></li>
+    <li><a href="/hhhh/myPage"> 마이페이지</a></li>
+    <li><a href="/hhhh/order">장바구니</a></li>
+    <li><a href="/hhhh/orderSearch"> 주문배송조회</a></li>
+    <li><a href="/hhhh/costomer"> 고객센터 </a></li>
+    <li><a href="/hhhh/logout">로그아웃</a></li>
 
   </ul>
 </header>
@@ -170,39 +170,39 @@
         </ul>
       </li>
 
-<!--      <li class="section1_li" >-->
-<!--        <ul class="product" >-->
-<!--          <a href="" th:href="@{./top/topNum?modelNum={name}(name=${list.get(2).modelNum})}">-->
-<!--            <div style="text-align: center;"><img th:src="${list.get(2).photo1}" ></div>-->
-<!--            <li class="product_li1" th:text="${list.get(2).modelName}">상의 1</li>-->
-<!--            <li class="product_li2" th:text="${list.get(2).modelBrand}"> 무신사 </li>-->
-<!--            <li class="product_li3"th:text="|${list.get(2).price}원|" >30000원</li>-->
-<!--          </a>-->
-<!--        </ul>-->
-<!--      </li>-->
+      <li class="section1_li" >
+        <ul class="product" >
+          <a href="" th:href="@{|${list.get(2).form}/Num?modelNum=${list.get(2).modelNum}|}">
+            <div style="text-align: center;"><img th:src="${list.get(2).photo1}" ></div>
+            <li class="product_li1" th:text="${list.get(2).modelName}">상의 1</li>
+            <li class="product_li2" th:text="${list.get(2).modelBrand}"> 무신사 </li>
+            <li class="product_li3"th:text="|${list.get(2).price}원|" >30000원</li>
+          </a>
+        </ul>
+      </li>
 
-<!--      <li class="section1_li" >-->
-<!--        <ul class="product" >-->
-<!--          <a href="" th:href="@{./top/topNum?modelNum={name}(name=${list.get(3).modelNum})}">-->
-<!--            <div style="text-align: center;"><img th:src="${list.get(3).photo1}" ></div>-->
-<!--            <li class="product_li1" th:text="${list.get(3).modelName}">상의 1</li>-->
-<!--            <li class="product_li2" th:text="${list.get(3).modelBrand}"> 무신사 </li>-->
-<!--            <li class="product_li3"th:text="|${list.get(3).price}원|" >30000원</li>-->
-<!--          </a>-->
-<!--        </ul>-->
-<!--      </li>-->
+      <li class="section1_li" >
+        <ul class="product" >
+          <a href="" th:href="@{|${list.get(3).form}/Num?modelNum=${list.get(3).modelNum}|}">
+            <div style="text-align: center;"><img th:src="${list.get(3).photo1}" ></div>
+            <li class="product_li1" th:text="${list.get(3).modelName}">상의 1</li>
+            <li class="product_li2" th:text="${list.get(3).modelBrand}"> 무신사 </li>
+            <li class="product_li3"th:text="|${list.get(3).price}원|" >30000원</li>
+          </a>
+        </ul>
+      </li>
 
-<!--      <li class="section1_li" >-->
-<!--        <ul class="product" >-->
-<!--          <div>-->
-<!--            <a href="" th:href="@{./top/topNum?modelNum={name}(name=${list.get(4).modelNum})}">-->
-<!--            <div style="text-align: center;"><img th:src="${list.get(4).photo1}" ></div>-->
-<!--            <li class="product_li1" th:text="${list.get(4).modelName}">상의 1</li>-->
-<!--            <li class="product_li2" th:text="${list.get(4).modelBrand}"> 무신사 </li>-->
-<!--            <li class="product_li3"th:text="|${list.get(4).price}원|" >30000원</li>-->
-<!--          </a>-->
-<!--        </ul>-->
-<!--      </li>-->
+      <li class="section1_li" >
+        <ul class="product" >
+          <div>
+            <a href="" th:href="@{|${list.get(4).form}/Num?modelNum=${list.get(4).modelNum}|}">
+            <div style="text-align: center;"><img th:src="${list.get(4).photo1}" ></div>
+            <li class="product_li1" th:text="${list.get(4).modelName}">상의 1</li>
+            <li class="product_li2" th:text="${list.get(4).modelBrand}"> 무신사 </li>
+            <li class="product_li3"th:text="|${list.get(4).price}원|" >30000원</li>
+          </a>
+        </ul>
+      </li>
 
 
 

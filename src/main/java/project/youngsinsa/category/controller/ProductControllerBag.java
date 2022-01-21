@@ -61,6 +61,7 @@ public class ProductControllerBag {
         ModelAndView mv = new ModelAndView("hhhh/product");
         mv.addObject("product", product);
         mv.addObject("comment", com);
+        mv.addObject("count",com.size());
         return mv;
     }
 
@@ -105,24 +106,25 @@ public class ProductControllerBag {
     //장바구니
     @GetMapping("order")
     public ModelAndView order(HttpServletRequest request) {
-        String uerID = request.getParameter("uerID");
+        String userID = request.getParameter("userID");
         String modelNum = request.getParameter("modelNum");
         String form = "bag";
-        Category category= categoryService.showOne(form,modelNum);
-        int level =memberService.findLevel(uerID);
+        Category category= categoryService.showOne(modelNum,form);
+
+        int level =memberService.findLevel(userID);
         OrderList orderList = new OrderList();
-        orderList.setModelName(modelNum);
+        orderList.setModelNum(modelNum);
         orderList.setModelName(category.getModelName());
         orderList.setModelBrand(category.getModelBrand());
         orderList.setPrice(category.getPrice());
-        orderList.setUserID(uerID);
+        orderList.setUserID(userID);
         orderList.setUserLevel(level);
         orderList.setState("yet");
         orderList.setDelivery("yet");
         orderService.order(orderList, form);
 
 
-        ModelAndView mv = new ModelAndView("hhhh/order");
+        ModelAndView mv = new ModelAndView("redirect:/hhhh/order");
         return mv;
 
     }

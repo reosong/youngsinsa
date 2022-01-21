@@ -10,8 +10,10 @@ import javax.persistence.Id;
 @Getter
 @Setter
 public class OrderList {
+
     @Id
     private int orderNum;
+
     private String modelNum;
     private String modelName;
     private String modelBrand;

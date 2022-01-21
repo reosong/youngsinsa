@@ -71,7 +71,7 @@ public class MemberControl {
         }
         HttpSession session = request.getSession();
         session.setAttribute("userID", member.getUserID());
-        mv.setViewName("hhhh/login");
+        mv.setViewName("redirect:http://localhost:8080/hhhh");
 
         return mv;
     }
@@ -95,7 +95,7 @@ public class MemberControl {
         } else {
             return "hhhh/error";
         }
-        return "localhost:8080/hhhh";
+        return "redirect:/hhhh";
     }
 
 

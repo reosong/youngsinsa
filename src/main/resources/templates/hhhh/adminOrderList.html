@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,10 +39,10 @@
   <ul>
 
 
-    <li><a href="./admin/upload">상품등록</a></li>
-    <li><a href="./admin/orderList">주문내역</a></li>
-    <li><a href="./admin/orderSearch"> 주문배송조회</a></li>
-    <li><a href="./admin/costomer"> 고객센터 </a></li>
+    <li><a href="/admin/upload">상품등록</a></li>
+    <li><a href="/admin/orderList">주문내역</a></li>
+
+    <li><a href="#"> 고객센터 </a></li>
     <li><a href="./admin/logout">로그아웃</a></li>
 
   </ul>
@@ -58,9 +58,9 @@
         <thead>
         <tr>
           <th>번호</th>
-          <th>주문번호</th>
+          <th>상품번호</th>
           <th>주문자</th>
-          <th>작성시간</th>
+          <th>상태</th>
           <th>가격</th>
         </tr>
         </thead>
@@ -68,28 +68,15 @@
 
         <!-- 질문리스트 보여주기 -->
         <tbody>
+        <div th:each="com:${order}">
+        <tr>
+          <th th:text="${com.orderNum}">번호</th>
+          <th th:text="${com.orderNum}">상품번호</th>
+          <th th:text="${com.userID}">주문자</th>
+          <th th:text="${com.state}">상태</th>
+          <th th:text="${com.price}">가격</th>
+        </tr>
 
-        <tr>
-          <th>번호</th>
-          <th>주문번호</th>
-          <th>주문자</th>
-          <th>작성시간</th>
-          <th>가격</th>
-        </tr>
-        <tr>
-          <th>번호</th>
-          <th>주문번호</th>
-          <th>주문자</th>
-          <th>작성시간</th>
-          <th>가격</th>
-        </tr>
-        <tr>
-          <th>번호</th>
-          <th>주문번호</th>
-          <th>주문자</th>
-          <th>작성시간</th>
-          <th>가격</th>
-        </tr>
 
 
 

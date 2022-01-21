@@ -12,7 +12,12 @@ import project.youngsinsa.category.repository.CategoryRepository;
 import project.youngsinsa.category.repository.CategoryRepositoryImp;
 import project.youngsinsa.category.service.CategoryService;
 import project.youngsinsa.category.service.CategoryServiceImp;
+import project.youngsinsa.member.Service.MemberService;
+import project.youngsinsa.member.Service.MemberServiceImp;
 import project.youngsinsa.member.domain.SessionManager;
+import project.youngsinsa.order.domain.OrderList;
+import project.youngsinsa.order.service.OrderService;
+import project.youngsinsa.order.service.OrderServiceImp;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -25,13 +30,20 @@ public class ProductControllerTop {
     private CategoryRepository categoryRepository;
     private CategoryService categoryService;
     private SessionManager sessionManager;
+    private OrderService orderService;
+    private MemberService memberService;
+
 
 
     public ProductControllerTop(CategoryServiceImp categoryServiceImp
-            , SessionManager sessionManager, CategoryRepositoryImp categoryRepository) {
-        this.categoryRepository= categoryRepository;
+            , SessionManager sessionManager, CategoryRepositoryImp categoryRepository,
+                                OrderServiceImp orderServiceImp, MemberServiceImp memberServiceImp) {
+        this.categoryRepository = categoryRepository;
         this.categoryService = categoryServiceImp;
         this.sessionManager = sessionManager;
+        this.orderService =orderServiceImp;
+        this.memberService = memberServiceImp;
+
     }
 
 
@@ -48,6 +60,7 @@ public class ProductControllerTop {
         ModelAndView mv = new ModelAndView("hhhh/product");
         mv.addObject("product", product);
         mv.addObject("comment",com);
+        mv.addObject("count",com.size());
         return mv;
     }
 
@@ -88,6 +101,31 @@ public class ProductControllerTop {
 
     //장바구니
 
+    //장바구니
+    @GetMapping("order")
+    public ModelAndView order(HttpServletRequest request) {
+        String userID = request.getParameter("userID");
+        String modelNum = request.getParameter("modelNum");
+        String form = "top";
+        Category category= categoryService.showOne(modelNum,form);
+
+        int level =memberService.findLevel(userID);
+        OrderList orderList = new OrderList();
+        orderList.setModelNum(modelNum);
+        orderList.setModelName(category.getModelName());
+        orderList.setModelBrand(category.getModelBrand());
+        orderList.setPrice(category.getPrice());
+        orderList.setUserID(userID);
+        orderList.setUserLevel(level);
+        orderList.setState("yet");
+        orderList.setDelivery("yet");
+        orderService.order(orderList, form);
+
+
+        ModelAndView mv = new ModelAndView("redirect:/hhhh/order");
+        return mv;
+
+    }
 
 
 

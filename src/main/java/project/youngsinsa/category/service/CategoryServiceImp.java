@@ -108,7 +108,7 @@ public class CategoryServiceImp implements CategoryService{
             int like =categoryRepository.showJewelry(num).getLikeNum()+1;
             categoryRepositoryElse.JewelryLike(num,like);
         } else if (form.equals("onepiece")) {
-            int like = categoryRepository.showJewelry(num).getLikeNum()+1;
+            int like = categoryRepository.showOnepiece(num).getLikeNum()+1;
             categoryRepositoryElse.JewelryLike(num, like);
         }else if (form.equals("outer")) {
             int like = categoryRepository.showOuter(num).getLikeNum()+1;

@@ -60,20 +60,20 @@
             <a href="/hhhh/login" class="no_line"  style="color: rgb(23, 177, 238);" th:unless="${session.userID==null}" th:text="'바로접속 on'">
                 바로접속</a>
         </li>
-        <li><a href="./hhhh/myPage"> 마이페이지</a></li>
-        <li><a href="./hhhh/cart">장바구니</a></li>
-        <li><a href="./hhhh/orderSearch"> 주문배송조회</a></li>
-        <li><a href="./hhhh/costomer"> 고객센터 </a></li>
-        <li><a href="./hhhh/logout">로그아웃</a></li>
+        <li><a href="/hhhh/myPage"> 마이페이지</a></li>
+        <li><a href="/hhhh/order">장바구니</a></li>
+        <li><a href="/hhhh/orderSearch"> 주문배송조회</a></li>
+        <li><a href="/hhhh/costomer"> 고객센터 </a></li>
+        <li><a href="/hhhh/logout">로그아웃</a></li>
 
     </ul>
 </header>
 
 <div>
     <ul id="rest">
-        <a href="redirect:/localhost:8080/hhhh/login"><li id="rest_li"  style="padding:15px 0 0 0;"> 로그인</li></a>
-        <a href="../hhhh/menu5.html"><li id="rest_li" style="height: 40px;">장바 <br>구니</li></a>
-        <a href="#header_2"><li id="rest_li" style="padding:15px 0 0 0;"> TOP </li></a>
+        <a href="redirect:/hhhh/login"><li id="rest_li"  style="padding:15px 0 0 0;"> 로그인</li></a>
+        <a href="redirect:/hhhh/order"><li id="rest_li" style="height: 40px;">장바 <br>구니</li></a>
+        <a href="#header_mu"><li id="rest_li" style="padding:15px 0 0 0;"> TOP </li></a>
     </ul>
 
 </div>
@@ -126,7 +126,7 @@
 
     <section id="aside_section_2">
         <ul>
-            <li>이미지 삽입</li>
+
             <li><b>1번 배송 / 교환 / 환불관련</b></li>
             <li><b>2번 결제 / 회원관련</b></li>
             <li style="font-size: 15px; color: lightgrey;">오전 9시~오후 6시 운영</li>
@@ -182,7 +182,7 @@
                 <li> 품번 </li>
                 <li> 시즌 </li>
                 <li> 성별 </li>
-                <li>조회수(1개월)</li>
+                <li>조회수</li>
 
                 <li>좋아요</li>
                 <li>구매후기</li>
@@ -196,7 +196,7 @@
                 <li th:text="${product.sex}">성별 </li>
                 <li th:text="${product.countNum}">조회수</li>
                 <li th:text="${product.likeNum}">좋아요</li>
-                <li >구매후기</li>
+                <li th:text="${count}"></li>
             </ul>
             <div class="clear"></div>
         </section>
