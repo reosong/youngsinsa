@@ -4,7 +4,6 @@ package project.youngsinsa.category.service;
 import org.springframework.stereotype.Service;
 import project.youngsinsa.category.domain.Category;
 import project.youngsinsa.category.domain.Comment;
-import project.youngsinsa.category.domain.Style;
 
 import java.util.List;
 

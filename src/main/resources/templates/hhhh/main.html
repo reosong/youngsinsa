@@ -15,12 +15,24 @@ a:active{text-decoration: none;color: black;}
 a:hover{text-decoration: none;color: black;}
     
 </style>
-    <script src="./toto.js"></script>
+    <script src="../musinsa/data.js"></script>
 
-    <link rel="stylesheet" href="musinsa/musinsa.css">
-    <link rel="stylesheet" href="../musinsa/musinsa.css">
+    <link rel="stylesheet" href="musinsa/musinsa.css?2">
+    <link rel="stylesheet" href="../musinsa/musinsa.css?2">
+
+<script>
+    function change(){
+    $.ajax({
+url : "hhhh/top",
+type : 'post',
+data : {
+    form : "top"}
+
+ });
+      }
 
 
+</script>
 </head>
 <body>
 
@@ -101,7 +113,7 @@ a:hover{text-decoration: none;color: black;}
     <nav id="navbar">
         <ul class="navbar_menu" style="list-style: none;">
             <a href="./hhhh/category/top">
-                <li class="aside_li">상의 <span class="aside_small">&nbsp; Top</span></li>
+                <li class="aside_li">상의<span class="aside_small">&nbsp; Top</span></li>
             </a>
             <a href="./hhhh/category/outer">
                 <li class="aside_li">아우터<span class="aside_small">&nbsp; Outer</span></li>
@@ -167,83 +179,53 @@ a:hover{text-decoration: none;color: black;}
 
     <!--섹션 1-->
     <section id="section_1" class="isection_1" >
-        <h1 style="padding-top: 10px;"> &nbsp; 랭킹</h1>
-        <div class="hidden_text">
-            <aside id="section_aside" class="hidden_text">
-                <h3><b>상품</b></h3>
-                <ul>
+        <h1 style="padding-top: 10px;"> &nbsp; 상의</h1>
 
-                    <li>아우터</li>
-                    <li>원피스</li>
-                    <li>가방</li>
-                    <li>신발</li>
-
-                    <li>안경</li>
-                    <li>악세서리</li>
-
-                </ul>
-                <ul>
-                    <li>상의</li>
-                    <li>바지</li>
-                    <li>스커트</li>
-                    <li>스니커즈</li>
-                    <li>시계</li>
-
-                    <li>주얼리</li>
-
-                </ul>
-
-
-            </aside>
-        </div>
 
         <!--섹션1의 섹션 1시작 -->
-        <section id="section1_1 msection1_1">
+        <section id="section1_1 ">
             <ul style="display: inline-block;" class="msection1_1_ul">
                 <li>
                     <ul class="msection1_1_ul">
                         <li>
-                            <a href="hhhh/bluejean.html">
-                                <img src="images/mu8.jpeg" class="image_size_nomal">
-                            </a>
+                            <a th:href="@{|/hhhh/category/${list.get(0).form}/Num?modelNum=${list.get(0).modelNum}|}">
+                                <img th:src="${list.get(0).photo1}" class="image_size_nomal"></a>
                         </li>
-                        <li class="text_center"><b>생 로 랑</b></li>
-                        <li class="text_center">멋쟁이 청바지</li?>
-                        <li class="text_center">259,000원</li>
+                        <li class="text_center" th:text="${list.get(0).modelBrand}"><b>생 로 랑</b></li>
+                        <li class="text_center" th:text="${list.get(0).modelName}">멋쟁이 청바지</li>
+                        <li class="text_center"th:text="${list.get(0).price}">259,000원</li>
                     </ul>
                     <ul class="msection1_1_ul">
                         <li>
-                            <a href="hhhh/kakhi.html">
-                                <img src="images/mu4.jpg" class="image_size_nomal">
-                            </a>
+                            <a th:href="@{|/hhhh/category/${list.get(1).form}/Num?modelNum=${list.get(1).modelNum}|}">
+                                <img th:src="${list.get(1).photo1}" class="image_size_nomal"></a>
                         </li>
-                        <li class="text_center"><b>라퍼지 스토어</b></li>
-                        <li class="text_center">군인핏 야상</li>
-                        <li class="text_center">99,000원</li>
+                        <li class="text_center" th:text="${list.get(1).modelBrand}"><b>생 로 랑</b></li>
+                        <li class="text_center" th:text="${list.get(1).modelName}">멋쟁이 청바지</li>
+                        <li class="text_center"th:text="${list.get(1).price}">259,000원</li>
                     </ul>
-
                 </li>
             </ul>
             <ul style="display: inline-block;" class="msection1_1_ul">
                 <li>
                     <ul class="msection1_1_ul">
-                        <li><a href="./hhhh/product2.html">
-                            <img src="images/suare.jpeg" class="image_size_nomal">
-                        </a>
+                        <li>
+                            <a th:href="@{|/hhhh/category/${list.get(2).form}/Num?modelNum=${list.get(2).modelNum}|}">
+                                <img th:src="${list.get(2).photo1}" class="image_size_nomal"></a>
                         </li>
-                        <li class="text_center"><b>수 아 레</b></li>
-                        <li class="text_center">니트</li?>
-                        <li class="text_center">39,000원</li>
+                        <li class="text_center" th:text="${list.get(2).modelBrand}"><b>생 로 랑</b></li>
+                        <li class="text_center" th:text="${list.get(2).modelName}">멋쟁이 청바지</li>
+                        <li class="text_center"th:text="${list.get(2).price}">259,000원</li>
                     </ul>
                     <ul class="msection1_1_ul">
-                        <li><a href="./hhhh/product3.html">
-                            <img src="images/mu3.jpg" class="image_size_nomal">
-                        </a></li>
-                        <li class="text_center"><b>제로</b></li>
-                        <li class="text_center">개편해 츄리닝</li>
-                        <li class="text_center">39,900원</li>
+                        <li>
+                            <a th:href="@{|/hhhh/category/${list.get(3).form}/Num?modelNum=${list.get(3).modelNum}|}">
+                                <img th:src="${list.get(3).photo1}" class="image_size_nomal"></a>
+                        </li>
+                        <li class="text_center" th:text="${list.get(3).modelBrand}"><b>생 로 랑</b></li>
+                        <li class="text_center" th:text="${list.get(3).modelName}">멋쟁이 청바지</li>
+                        <li class="text_center"th:text="${list.get(3).price}">259,000원</li>
                     </ul>
-
                 </li>
             </ul>
 
@@ -251,26 +233,56 @@ a:hover{text-decoration: none;color: black;}
                 <div class="msection1_1_ul_hi">
                     <li>
                         <ul class="msection1_1_ul">
-                            <li><a href="./hhhh/product4.html">
-                                <img src="images/brown.jpeg" class="image_size_nomal">
-                            </a>
+                            <li>
+                                <a th:href="@{|/hhhh/category/${list.get(4).form}/Num?modelNum=${list.get(0).modelNum}|}">
+                                    <img th:src="${list.get(4).photo1}" class="image_size_nomal"></a>
                             </li>
-                            <li class="text_center"><b>브라운 브레쓰</b></li>
-                            <li class="text_center">완멋 후드티</li?>
-                            <li class="text_center">39,900원</li>
+                            <li class="text_center" th:text="${list.get(4).modelBrand}"><b>생 로 랑</b></li>
+                            <li class="text_center" th:text="${list.get(4).modelName}">멋쟁이 청바지</li>
+                            <li class="text_center"th:text="${list.get(4).price}">259,000원</li>
                         </ul>
                         <ul class="msection1_1_ul">
-                            <li><a href="./hhhh/product5.html">
-                                <img src="images/mu7.jpeg" class="image_size_nomal">
-                            </a></li>
-                            <li class="text_center"><b>무신사 스탠다드</b></li>
-                            <li class="text_center">바지</li>
-                            <li class="text_center">20000원</li>
+                            <li>
+                                <a th:href="@{|/hhhh/category/${list.get(5).form}/Num?modelNum=${list.get(0).modelNum}|}">
+                                    <img th:src="${list.get(5).photo1}" class="image_size_nomal"></a>
+                            </li>
+                            <li class="text_center" th:text="${list.get(5).modelBrand}"><b>생 로 랑</b></li>
+                            <li class="text_center" th:text="${list.get(5).modelName}">멋쟁이 청바지</li>
+                            <li class="text_center"th:text="${list.get(5).price}">259,000원</li>
                         </ul>
 
                     </li>
                 </div>
             </ul>
+
+
+
+            <ul style="display: inline-block; list-style: none;" class="msection1_1_ul_2">
+                <div class="msection1_1_ul_hi">
+                    <li>
+                        <ul class="msection1_1_ul">
+                            <li>
+                                <a th:href="@{|/hhhh/category/${list.get(6).form}/Num?modelNum=${list.get(6).modelNum}|}">
+                                    <img th:src="${list.get(6).photo1}" class="image_size_nomal"></a>
+                            </li>
+                            <li class="text_center" th:text="${list.get(6).modelBrand}"><b>생 로 랑</b></li>
+                            <li class="text_center" th:text="${list.get(6).modelName}">멋쟁이 청바지</li>
+                            <li class="text_center"th:text="${list.get(6).price}">259,000원</li>
+                        </ul>
+                        <ul class="msection1_1_ul">
+                            <li>
+                                <a th:href="@{|/hhhh/category/${list.get(7).form}/Num?modelNum=${list.get(7).modelNum}|}">
+                                    <img th:src="${list.get(7).photo1}" class="image_size_nomal"></a>
+                            </li>
+                            <li class="text_center" th:text="${list.get(7).modelBrand}"><b>생 로 랑</b></li>
+                            <li class="text_center" th:text="${list.get(7).modelName}">멋쟁이 청바지</li>
+                            <li class="text_center"th:text="${list.get(7).price}">259,000원</li>
+                        </ul>
+
+                    </li>
+                </div>
+            </ul>
+
             </div>
 
 
@@ -300,12 +312,12 @@ a:hover{text-decoration: none;color: black;}
     <!--섹션 2-->
 
     <section class="section_2">
-        <aside id="section_aside">
+        <aside class="section_aside">
             <h3><b>스타일</b></h3>
-            <ul>
-                <li>브랜드 스냅</li>
-                <li>코디숍</li>
-                <li>스페셜</li>
+            <ul class="list_s">
+                <li class="list_s">브랜드 스냅</li>
+                <li class="list_s">코디숍</li>
+                <li class="list_s">스페셜</li>
 
             </ul>
 
@@ -314,70 +326,76 @@ a:hover{text-decoration: none;color: black;}
         </aside>
 
         <!--섹션2의 섹션 1시작 -->
-        <section id="section1_1">
+        <section class="section10_1">
 
-            <ul style="display: inline-block;">
-                <li>
-                    <ul>
-                        <li><a href="./hhhh/style001.html">
-                            <img src="images/style001_small.jpeg" class= "image_size_long">
+            <ul style="display: inline-block;" class="list_s">
+                <li  class="list_s">
+                    <ul  class="list_s">
+                        <li><a href="" th:href="@{/hhhh/style/Num?Num=${styleList.get(o).num}}">
+                            <img src="" th:src="${styleList.get(0).photo1}" class= "image_size_long">
                         </a></li>
-                        <li class="text_center"><b>코디</b></li>
-                        <li class="text_center">오야니</li>
-                        <li class="text_center">김혜린</li>
-                        <li class="text_center">21.11.19 </li>
+                        <li class="text_center" ><b>코디</b></li>
+                        <li class="text_center" th:text="${styleList.get(0).modelBrand}">오야니</li>
+                        <li class="text_center" th:text="${styleList.get(0).name}">김혜린</li>
+                        <li class="text_center" th:text="${styleList.get(0).date}">21.11.19 </li>
                     </ul>
-
-
                 </li>
             </ul>
             <ul style="display: inline-block;">
-                <li>
-                    <ul>
-                        <li><a href="./hhhh/style002.html">
-                            <img src="images/style002_small.jpeg" class="image_size_long">
+                <li class="list_s">
+                    <ul class="list_s">
+                        <li><a href="" th:href="@{/hhhh/style/Num?Num=${styleList.get(1).num}}">
+                            <img src="" th:src="${styleList.get(1).photo1}" class= "image_size_long">
                         </a></li>
-                        <li class="text_center"><b>코디</b></li>
-                        <li class="text_center">미드나잇 무브</li>
-                        <li class="text_center">휘영</li>
-                        <li class="text_center">21.11.22</li>
+                        <li class="text_center" ><b>코디</b></li>
+                        <li class="text_center" th:text="${styleList.get(1).modelBrand}">오니</li>
+                        <li class="text_center" th:text="${styleList.get(1).name}">김린</li>
+                        <li class="text_center" th:text="${styleList.get(1).date}">21.11.19 </li>
                     </ul>
-
-
                 </li>
             </ul>
             <ul style="display: inline-block;">
-                <li>
-                    <ul>
-                        <li><a href="./hhhh/style003.html">
-                            <img src="images/style003_samll.jpeg" class="image_size_long">
+                <li class="list_s">
+                    <ul class="list_s">
+                        <li><a href="" th:href="@{/hhhh/style/Num?Num=${styleList.get(2).num}}">
+                            <img src="" th:src="${styleList.get(2).photo1}" class= "image_size_long">
                         </a></li>
-                        <li class="text_center"><b>코디</b></li>
-                        <li class="text_center">어널로이드</li>
-                        <li class="text_center">허재경</li>
-                        <li class="text_center">21.11.20</li>
+                        <li class="text_center" ><b>코디</b></li>
+                        <li class="text_center" th:text="${styleList.get(2).modelBrand}">오야니</li>
+                        <li class="text_center" th:text="${styleList.get(2).name}">김혜린</li>
+                        <li class="text_center" th:text="${styleList.get(2).date}">21.11.19 </li>
                     </ul>
-
-
-                </li>
-            </ul>
-            <ul style="display: inline-block;">
-                <li>
-                    <ul>
-                        <li> <a href="./hhhh/style004.html">
-                            <img src="images/style004_small.jpeg" class="image_size_long">
-                        </a></li>
-                        <li class="text_center"><b>코디</b></li>
-                        <li class="text_center">로르인</li>
-                        <li class="text_center">김경은</li>
-                        <li class="text_center">21.11.20</li>
-                    </ul>
-
-
                 </li>
             </ul>
 
 
+            <ul style="display: inline-block;">
+                <li class="list_s">
+                    <ul class="list_s">
+                        <li><a href="" th:href="@{/hhhh/style/Num?Num=${styleList.get(3).num}}">
+                            <img src="" th:src="${styleList.get(3).photo1}" class= "image_size_long">
+                        </a></li>
+                        <li class="text_center" ><b>코디</b></li>
+                        <li class="text_center" th:text="${styleList.get(3).modelBrand}">오야니</li>
+                        <li class="text_center" th:text="${styleList.get(3).name}">김혜린</li>
+                        <li class="text_center" th:text="${styleList.get(3).date}">21.11.19 </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul style="display: inline-block;">
+                <li class="list_s">
+                    <ul class="list_s">
+                        <li><a href="" th:href="@{/hhhh/style/Num?Num=${styleList.get(o).num}}">
+                            <img src="" th:src="${styleList.get(0).photo1}" class= "image_size_long">
+                        </a></li>
+                        <li class="text_center" ><b>코디</b></li>
+                        <li class="text_center" th:text="${styleList.get(0).modelBrand}">오야니</li>
+                        <li class="text_center" th:text="${styleList.get(0).name}">김혜린</li>
+                        <li class="text_center" th:text="${styleList.get(0).date}">21.11.19 </li>
+                    </ul>
+                </li>
+            </ul>
 
         </section>
 
@@ -397,9 +415,9 @@ a:hover{text-decoration: none;color: black;}
 
     <!--섹션 3-->
     <section class="section_3">
-        <aside id="section_aside">
+        <aside class="section_aside">
             <h3><b>스페셜</b></h3>
-            <ul>
+            <ul class="list_s">
                 <li>쇼 케이스</li>
                 <li>스페셜이슈</li>
                 <li>단독 상품</li>

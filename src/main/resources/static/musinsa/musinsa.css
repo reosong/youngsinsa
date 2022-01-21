@@ -15,7 +15,7 @@
     position: fixed;
     bottom: 100px;
     right: 5px;
-    
+
 
 }
 #rest_li{
@@ -33,7 +33,7 @@
 
 .no_line{
     text-decoration:none;
-    
+
 
 }
 
@@ -45,17 +45,17 @@
     color: white;
     height: 50px;
     position: fixed;
-    
-    
-    
+
+
+
 }
 #header_div{
-   
+   padding-left: 50px;
     width: 50%;
     height: 50px;
     font-size: 40px;
-padding-left: 50px;
-   
+
+
     display: inline;
 }
 #header_div2{
@@ -76,8 +76,8 @@ text-align: right;
     display: inline;
     font-size: 15px;
     padding-right: 10px;
-   
-    
+
+
 }
 #header_2{
     width: 100%;
@@ -88,7 +88,7 @@ text-align: right;
     margin-top: 10px;
     margin-left: 20px;
     display: inline-block;
-   
+
 }
 #header_2 li{
     display: inline;
@@ -140,8 +140,8 @@ text-align: right;
     padding-left: 10px;
     font-family: "돋움";
     a:link
-   
-    
+
+
 }
 #aside_a{
     width: 20%;
@@ -165,26 +165,30 @@ margin-top: 10px;
 }
 
 /*메인*/
+.but{
+    border: none; background-color: white; font-size: 15px;
+}
 
 main{
     width: 79%;
     display: inline-block;
     float: right;
-   
+
 }
 
 #section_1{
     width: 100%;
     height: 600px;
     border-bottom: solid 1px lightgray;
-   
-    
+    margin-left: 5%;
+
+
 
 }
-#section_aside{
-    width: 25%;
+.section_aside{
+    width: 20%;
     height: 90%;
-    
+
     display: inline-block;
     float: left;
     margin-top: 15px;
@@ -202,24 +206,43 @@ margin-top: 15px;
     margin-top: 15px;
 }
 #section1_1{
-    
+
     height: 90%;
     width: 74%;
     display: inline-block;
     float: right;
-    
+    margin-left:5%;
+
+}
+.section10_1{
+
+    height: 90%;
+    width: 74%;
+    display: inline-block;
+    float: left;
+    margin-left:5%;
+    list-style:none;
+
+}
+
+.list_s{
+list-style:none;
 }
 .image_size_nomal{
 width: 211px;
-height: 200px;    
+height: 200px;
 margin-top: 0;
 
 
 
 }
+.but{
+    border: none; background-color: white; font-size: 15px;
+}
 #section1_1 ul{
     list-style: none;
-    
+    margin-left:5%;
+
 }
 .text_center{
     text-align: center;
@@ -235,10 +258,10 @@ margin-top: 0;
 
 .section_2{
     width: 100%;
-    height: 60%;
+    height: 50%;
     border-bottom: solid 1px lightgray;
     padding-top: 20px;
-
+    margin-left: 5%;
 }
 
 .image_size_long{
@@ -258,7 +281,7 @@ margin-top: 0;
     height: 450px;
     border-bottom: solid 1px lightgray;
     padding-top: 20px;
-
+    margin-left: 5%;
 }
 
 #btn{width:300px; height:50px; background-color:#fff; cursor:pointer; margin:0 auto; text-align:center; line-height:50px;}
@@ -266,61 +289,3 @@ margin-top: 0;
 #slideTogglebox{width:300px; height:300px; background-color:beige; display:none; }
 
 
-
-
-@media only screen and (max-width: 800px){
-
-    #header_div{
-        margin-top: 20px;
-        font-size: 30px;
-    }
-    #header_div2{
-        visibility: hidden;
-    }
-    .hidden_text2{
-        display:none;
-    }
-    #header_3{
-        height: 50px;
-    }
-    #msection1-1{
-        float: left;
-        width: 100%;
-        border: 1px red solid;
-        
-    }
-    .msection1_1_ul{
-        list-style: none;
-    }
-    .msection1_1_ul_hi{
-        display: none;
-    }
-
- 
-}
-
-@media only screen and (max-width: 1150px){
-    #header_div2{
-        visibility: hidden;
-    }
-    .hidden_text{
-        display: none;
-    }
-    .section_2{
-     height: 800px;
-    }
-    .section_3{
-        height: 800px;
-    }
-
-
-
-}
-@media only screen and (max-width: 400px){
-.isection_1{
-    height: 1000px;
-    border-bottom: 1px solid lightgray;
-}
-
-
-}

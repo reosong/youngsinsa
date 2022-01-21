@@ -4,42 +4,64 @@ package project.youngsinsa.member.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import project.youngsinsa.category.domain.Category;
+import project.youngsinsa.style.dao.Style;
 import project.youngsinsa.category.service.CategoryService;
 import project.youngsinsa.category.service.CategoryServiceImp;
 import project.youngsinsa.member.domain.Member;
 import project.youngsinsa.member.domain.SessionManager;
 import project.youngsinsa.member.Service.MemberService;
 import project.youngsinsa.member.Service.MemberServiceImp;
+import project.youngsinsa.style.service.StyleService;
+import project.youngsinsa.style.service.StyleServiceImp;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/hhhh")
 @RequiredArgsConstructor
+
 public class MemberControl {
 
 
     private MemberService memberService;
     private SessionManager sessionManager;
     private CategoryService categoryService;
+    private StyleService styleService;
 
     @Autowired
     public MemberControl(MemberServiceImp memberServiceImp, SessionManager sessionManager,
-                         CategoryServiceImp categoryServiceImp) {
+                         CategoryServiceImp categoryServiceImp, StyleServiceImp styleServiceImp) {
         this.memberService = memberServiceImp;
         this.sessionManager = sessionManager;
         this.categoryService = categoryServiceImp;
+        this.styleService = styleServiceImp;
     }
 
     @GetMapping
-    public String main() {
-        return "hhhh/main";
+    public ModelAndView main() {
+        Category category= new Category();
+        category.setForm("top");
+        List<Category> list=categoryService.showList(category);
+        List<Style> list2 = styleService.showList();
+        ModelAndView mv = new ModelAndView("hhhh/main");
+        System.out.println(list2.size());
+        mv.addObject("list", list);
+        mv.addObject("styleList", list2);
+
+        return mv;
+    }
+
+    @PostMapping
+    public ModelAndView ch(HttpServletRequest request){
+        System.out.println("ssss");
+        System.out.println(request.getParameter("form"));
+
+        return null;
     }
 
     //로그인 화면이동
@@ -115,8 +137,14 @@ public class MemberControl {
 
     //마이페이지 이동
     @GetMapping("/myPage")
-    public String myPage(){
-        return "hhhh/myPage";
+    public String myPage(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userID") == null) {
+            return "hhhh/member";
+        }else{
+            return "hhhh/myPage";
+        }
+        
     }
 
     //정보 업데이트
@@ -126,6 +154,9 @@ public class MemberControl {
         ModelAndView mv = new ModelAndView("hhhh/main");
         return mv;
     }
+
+
+
 
 
 

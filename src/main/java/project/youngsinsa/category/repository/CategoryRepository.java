@@ -4,9 +4,7 @@ package project.youngsinsa.category.repository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import project.youngsinsa.category.domain.Category;
-import project.youngsinsa.category.domain.CategoryPants;
 import project.youngsinsa.category.domain.Comment;
-import project.youngsinsa.category.domain.Style;
 
 import java.util.List;
 

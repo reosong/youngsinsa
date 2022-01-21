@@ -27,12 +27,13 @@ public class CategoryServiceImp implements CategoryService{
     }
 
     int count =0;
+
     @Override
     public List<Category> showTopList(Category category) {
         return null;
     }
 
-    //top 상품리스트 불러오기
+    // 상품리스트 불러오기
     @Override
     public List<Category> showList(Category category){
 
