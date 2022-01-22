@@ -132,6 +132,7 @@ public class MemberControl {
         HttpSession session = request.getSession();
         session.invalidate();
 
+        System.out.println("cont");
         return "hhhh/main";
     }
 
@@ -144,7 +145,7 @@ public class MemberControl {
         }else{
             return "hhhh/myPage";
         }
-        
+
     }
 
     //정보 업데이트

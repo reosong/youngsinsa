@@ -12,12 +12,34 @@
         a:hover{text-decoration: none;color: black;}
 
         </style>
-    <!--    <link rel="stylesheet" href="../musinsa/product.css?ver2">-->
+    <script type="text/javascript" src="/musinsa/api.js?2"></script>
     <link rel="stylesheet" href="/musinsa/product.css?13">
     <link rel="stylesheet" href="/musinsa/order.css?13">
-    <link href="${pageContext.request.contextPath}/musinsa/product.css" rel="stylesheet" />
+    <script src="<c:url value="/js/egovframework/mbl/cmm/jquery-1.11.2.min.js"/>"></script>
+
+
+
+    <script>
+        function cl(){
+
+                $.ajax(){
+                    url:'/hhhh/order/buy',
+                    dataType:'json',
+                    success:function(data){
+                        alert(data.tid);
+                    },
+                    error:function(error){
+                        alert(error);
+                    }
+                  };
+             };
+
+    </script>
 </head>
 <body>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
 
 
 <!--영신사 스토어 헤더  -->
@@ -172,9 +194,12 @@
 
         <div class="box2">
 
-            <form action="">
-                <input class="button" type="submit" value="주문하기">
+            <form action="/hhhh/order/buy">
+                <input class="button"  type="submit" value="주문하기">
+
             </form>
+            <button id="apibtn" >주문하기</button>
+            <button onclick="cl()" >주문하기</button>
         </div>
 
 
